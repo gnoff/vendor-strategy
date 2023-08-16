@@ -1,0 +1,19 @@
+{
+  "name": "@my/vendor",
+  "version": "1.0.16",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "vendored"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "license": "ISC"
+}

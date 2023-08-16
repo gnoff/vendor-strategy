@@ -1,0 +1,12 @@
+info --- config file  - /Users/joshstory/projects/file-tarball-install-differences/run/registry/config.yaml 
+info --- the "crypt" algorithm is deprecated consider switch to "bcrypt" in the configuration file. Read the documentation for additional details 
+info --- using htpasswd file: /Users/joshstory/projects/file-tarball-install-differences/run/registry/htpasswd 
+info --- plugin successfully loaded: verdaccio-htpasswd 
+warn --- http address - http://localhost:4873/ - verdaccio/5.26.1 
+(node:65621) [DEP0106] DeprecationWarning: crypto.createDecipher is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+info <-- 127.0.0.1 requested 'PUT /@my%2fvendor' 
+info --- auth/allow_action: access granted to: undefined 
+info --- undefined is allowed publish for @my/vendor 
+http <-- 200, user: null(127.0.0.1), req: 'PUT /@my%2fvendor', bytes: 2273/0 
+http <-- 201, user: null(127.0.0.1), req: 'PUT /@my%2fvendor', bytes: 2273/53 

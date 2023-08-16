@@ -1,0 +1,91 @@
+{
+	"name": "@my/package",
+	"versions": {
+		"1.0.15": {
+			"name": "@my/package",
+			"version": "1.0.15",
+			"description": "",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"vendored"
+			],
+			"scripts": {
+				"test": "echo \"Error: no test specified\" && exit 1"
+			},
+			"keywords": [],
+			"author": "",
+			"publishConfig": {
+				"registry": "http://localhost:4873"
+			},
+			"license": "ISC",
+			"gitHead": "0e2f6c42f061e9abc57ec03e9f8552003b754d45",
+			"_id": "@my/package@1.0.15",
+			"_nodeVersion": "16.19.1",
+			"_npmVersion": "8.19.3",
+			"dist": {
+				"integrity": "sha512-5L2h+xGyXIH719uEiFebvP3BtkjyTSrujxICdsPf9p7ivD4unKJjWMBH+p4qqs49IOM9cXxcG8IY/PgT5RIMBg==",
+				"shasum": "c89131dc078ec217d7a843127a4e13de8ef1c449",
+				"tarball": "http://localhost:4873/@my/package/-/@my/package-1.0.15.tgz"
+			},
+			"contributors": []
+		},
+		"1.0.16": {
+			"name": "@my/package",
+			"version": "1.0.16",
+			"description": "",
+			"main": "index.js",
+			"files": [
+				"index.js"
+			],
+			"scripts": {
+				"test": "echo \"Error: no test specified\" && exit 1"
+			},
+			"keywords": [],
+			"author": "",
+			"license": "ISC",
+			"publishConfig": {
+				"registry": "http://localhost:4873"
+			},
+			"dependencies": {
+				"client-only": "^0.0.1",
+				"server-only": "^0.0.1"
+			},
+			"gitHead": "0e2f6c42f061e9abc57ec03e9f8552003b754d45",
+			"_id": "@my/package@1.0.16",
+			"_nodeVersion": "16.19.1",
+			"_npmVersion": "8.19.3",
+			"dist": {
+				"integrity": "sha512-9iBlBHyy2s3QnBxSCwgbcD0J0J/2DOcYGqoGhTwZt055VYY7k8XplsVZIMil/HDmoPUAg2hZDtay6yW2BpzZZA==",
+				"shasum": "ba439102968f24926fc85fd8a8b6f1ecc4c4ef05",
+				"tarball": "http://localhost:4873/@my/package/-/@my/package-1.0.16.tgz"
+			},
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2023-08-16T00:01:28.640Z",
+		"created": "2023-08-16T00:01:02.896Z",
+		"1.0.15": "2023-08-16T00:01:02.896Z",
+		"1.0.16": "2023-08-16T00:01:28.640Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.0.16"
+	},
+	"_uplinks": {},
+	"_distfiles": {},
+	"_attachments": {
+		"package-1.0.15.tgz": {
+			"shasum": "c89131dc078ec217d7a843127a4e13de8ef1c449",
+			"version": "1.0.15"
+		},
+		"package-1.0.16.tgz": {
+			"shasum": "ba439102968f24926fc85fd8a8b6f1ecc4c4ef05",
+			"version": "1.0.16"
+		}
+	},
+	"_rev": "6-2ab4b5c349a18ab9",
+	"_id": "@my/package",
+	"readme": "ERROR: No README data found!"
+}

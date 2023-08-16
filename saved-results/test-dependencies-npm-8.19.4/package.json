@@ -1,0 +1,13 @@
+{
+  "name": "test-dependencies-npm-8.19.4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "strategy": "file:../../strategies/dependencies/strategy.tgz"
+  },
+  "packageManager": "npm@8.19.4"
+}

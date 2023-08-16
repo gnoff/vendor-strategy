@@ -1,0 +1,18 @@
+storage: ./storage
+auth:
+  htpasswd:
+    file: ./htpasswd
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+packages:
+  "@strategy/*":
+    access: $anonymous
+    publish: $anonymous
+  "@my/*":
+    access: $anonymous
+    publish: $anonymous
+  "**":
+    access: $anonymous
+    proxy: npmjs
+log: { type: stdout, format: pretty, level: http }

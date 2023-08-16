@@ -1,0 +1,32 @@
+{
+  "name": "@my/package-a",
+  "version": "1.0.16",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "exports": {
+    ".": {
+      "cond": "./index.cond.js",
+      "default": "./index.js"
+    },
+    "./foo": {
+      "cond": "./foo.cond.js",
+      "default": "./foo.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "dependencies": {
+    "client-only": "^0.0.1",
+    "server-only": "^0.0.1"
+  }
+}
