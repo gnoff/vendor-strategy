@@ -1,11 +1,21 @@
 {
-  "name": "@my/package-b",
+  "name": "@my/package-a-vendored",
   "version": "1.0.48",
   "description": "",
   "main": "index.js",
   "files": [
     "index.js"
   ],
+  "exports": {
+    ".": {
+      "cond": "./index.cond.js",
+      "default": "./index.js"
+    },
+    "./foo": {
+      "cond": "./foo.cond.js",
+      "default": "./foo.js"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,20 +1,17 @@
 const fs = require("node:fs/promises");
 const path = require("path");
+const outdent = require("outdent");
+const { getDirectories } = require("./utils/utils.js");
 const argv = require("minimist")(process.argv.slice(2));
-const { runServer } = require("verdaccio");
+
+const packagesToVendor = new Set(["@my/package-a", "@my/package-b"]);
 
 async function refreshStrategies() {
   const projectPath = path.join(require.resolve("run"), "../..");
+  const vendorPath = path.join(projectPath, "@my/vendor");
 
   const { execa } = await import("execa");
   const { default: chalk } = await import("chalk");
-
-  const versionFilePath = path.join(projectPath, "run/global-version");
-  const previousVersion = (await fs.readFile(versionFilePath, "utf-8")).trim();
-  const parts = previousVersion.split(".");
-  parts[2] = (parseInt(parts[2]) + 1).toString();
-  const nextVersion = parts.join(".");
-  await fs.writeFile(versionFilePath, nextVersion);
 
   // Start our custom registry
   const verdaccioProcess = execa(
@@ -26,200 +23,169 @@ async function refreshStrategies() {
     }
   ).pipeAll(path.join(projectPath, "run", "verdaccio.log"));
 
-  const vendorPackagePath = path.join(projectPath, "@my/vendor");
-  const myPackagePath = path.join(projectPath, "@my/package");
-  const tempPath = path.join(projectPath, "temp");
-
-  const vendoredPackages = ["@my/package-a", "@my/package-b"];
-
-  for (package of vendoredPackages) {
-    await vendorPackage(package);
-  }
-
-  // create a staging project for vendoring
-  try {
-    await fs.rm(tempPath, { recursive: true });
-  } catch (error) {
-    // if the path doesn't exist there is nothing to remove
-  }
-  await fs.cp(myPackagePath, tempPath, { recursive: true });
-
-  // Inject a tracer console.log so we know when we're using the vendored version
-  const indexSource = await fs.readFile(
-    path.join(tempPath, "index.js"),
-    "utf-8"
-  );
-  await fs.writeFile(
-    path.join(tempPath, "index.js"),
-    "console.log('[VENDORED MODE]');\n" + indexSource
-  );
-
-  // update the package.json name
-  const packageSource = JSON.parse(
-    await fs.readFile(path.join(tempPath, "package.json"), "utf-8")
-  );
-  const vendoredPackageName = packageSource.name + "-vendored";
-  packageSource.name = vendoredPackageName;
-  packageSource.version = nextVersion;
-  await fs.writeFile(
-    path.join(tempPath, "package.json"),
-    JSON.stringify(packageSource, null, 2)
-  );
-
-  // pack the vendored packages
-  const { stdout: tarballName, all } = await execa("npm", ["pack"], {
-    all: true,
-    cwd: tempPath,
+  await new Promise((res) => {
+    setTimeout(res, 4000);
   });
-  const tarballSourcePath = path.join(tempPath, tarballName);
-  try {
-    await fs.rm(path.join(vendorPackagePath, "vendored"), {
-      recursive: true,
+
+  // Bump global version by 1 patch
+  const versionFilePath = path.join(projectPath, "run/global-version");
+  const previousVersion = (await fs.readFile(versionFilePath, "utf-8")).trim();
+  const parts = previousVersion.split(".");
+  parts[2] = (parseInt(parts[2]) + 1).toString();
+  const nextVersion = parts.join(".");
+  await fs.writeFile(versionFilePath, nextVersion);
+
+  // This will store the dependencies of all the packages we are vendoring
+  const vendorPackageDeps = new Map();
+
+  const myScopePackages = (
+    await getDirectories(path.join(projectPath, "@my"))
+  ).map((name) => "@my/" + name);
+  const strategyScopePackages = (
+    await getDirectories(path.join(projectPath, "@strategy"))
+  ).map((name) => "@strategy/" + name);
+
+  // First we prepare each package by bumping it's version and
+  // if vendoring, copying it to the vendored folder and capturing it's dependencies
+  for (let package of myScopePackages) {
+    const packagePath = path.join(projectPath, package);
+
+    await patchPackageSource(packagePath, async (source) => {
+      source.version = nextVersion;
+
+      if (packagesToVendor.has(package)) {
+        // capture dependencies of this vendored package to attribute to
+        // @my/vendor
+        if (source.dependencies) {
+          for (const dependency in source.dependencies) {
+            const dependencyVersion = source.dependencies[dependency];
+            if (
+              vendorPackageDeps.has(dependency) &&
+              vendorPackageDeps.get(dependency) !== dependencyVersion
+            ) {
+              throw new Error(
+                "We are attempting to vendor two packages that rely on the same package but with different versions"
+              );
+            }
+            vendorPackageDeps.set(dependency, dependencyVersion);
+          }
+        }
+
+        // If this package has exports create a __vendored_proxy_exports.js file
+        // which will expose resolved exports at runtime using conditions relying
+        // on package self resolution to avoid challenges with PnP
+        if (source.exports) {
+          let proxySource = outdent`
+            var path = require("path");
+            console.log("${package}::: running __vendored_proxy_exports.js");
+            module.exports = {\n
+          `;
+          for (let exportPath in source.exports) {
+            proxySource += outdent`
+              ${outdent}
+                "${exportPath}": require.resolve(path.join("${package}-vendored", "${exportPath}")),\n
+            `;
+          }
+          proxySource += outdent`
+            };\n
+          `;
+          await fs.writeFile(
+            path.join(packagePath, "__vendored_proxy_exports.js"),
+            proxySource
+          );
+        }
+      }
     });
-  } catch (error) {
-    // vendored path did not exist
+    if (packagesToVendor.has(package)) {
+      await copyPackageToVendor(package);
+    }
   }
-  await fs.cp(
-    tarballSourcePath,
-    path.join(vendorPackagePath, "vendored", vendoredPackageName + ".tgz")
-  );
 
-  // remove the temporary vendored package
-  await fs.rm(tempPath, { recursive: true });
+  // Now we update the vendor package deps
+  await patchPackageSource(vendorPath, (source) => {
+    source.version = nextVersion;
+    source.dependencies = {};
+    for (const [dependency, version] of vendorPackageDeps.entries()) {
+      source.dependencies[dependency] = version;
+    }
+  });
 
-  // Bump the version of @my/vendor
-  await patchAndPublish(vendorPackagePath);
+  // Finally we publish each package
+  for (let package of myScopePackages) {
+    await publish(package);
+  }
 
-  // Bump the version of @my/package
-  await patchAndPublish(myPackagePath);
+  // Now we update each strategy version and vendor dep and then publish
+  for (let package of strategyScopePackages) {
+    const packagePath = path.join(projectPath, package);
+    await patchPackageSource(packagePath, (source) => {
+      source.version = nextVersion;
+      if (!source.dependencies) {
+        source.dependencies = {};
+      }
+      source.dependencies["@my/vendor"] = nextVersion;
+    });
+    await publish(package);
+  }
 
-  // copy the files from the package to the vendored folder inside @my/vendor
-  // augment all top leve js files in the package to have a console.log indicating
-  // the vendored version is running. then add all the dependnecies of the package to
-  // @my/vendor's package.json dependencies so they can be installed when @my/vendor is installed
-  async function vendorPackage(packageName) {
+  async function publish(packageName) {
     const packagePath = path.join(projectPath, packageName);
-    const stem = path.join(packagePath, "..");
-
-    const vendoredPackagePath = path.join(
-      vendorPackagePath,
-      "vendored",
-      packageName
-    );
-    await fs.cp(packagePath, vendoredPackagePath, {
-      recursive: true,
-    });
-
-    // update the package.json name
-    const packageSource = JSON.parse(
-      await fs.readFile(path.join(vendoredPackagePath, "package.json"), "utf-8")
-    );
-    const vendoredPackageName = packageSource.name + "-vendored";
-    packageSource.name = vendoredPackageName;
-    packageSource.version = nextVersion;
-    await fs.writeFile(
-      path.join(tempPath, "package.json"),
-      JSON.stringify(packageSource, null, 2)
-    );
-
-    // augment all top-level js files
-    const files = await fs.readdir(vendoredPackagePath);
-    for (let file of files) {
-      if (file.endsWith(".js")) {
-        const source = await fs.readFile(
-          path.join(vendoredPackagePath, file),
-          "utf-8"
-        );
-        await fs.writeFile(
-          path.join(vendoredPackagePath, file),
-          "console.log('[VENDORED MODE]');\n" + source
-        );
-      }
-    }
-  }
-
-  async function patchAndPublish(pkgPath, patchPackageSource) {
-    let packageSource = JSON.parse(
-      await fs.readFile(path.join(pkgPath, "package.json"), "utf-8")
-    );
-    packageSource.version = nextVersion;
-    if (typeof patchPackage === "function") {
-      const result = patchPackage(packageSource);
-      if (result) {
-        packageSource = result;
-      }
-    }
-    await fs.writeFile(
-      path.join(pkgPath, "package.json"),
-      JSON.stringify(packageSource, null, 2)
-    );
-
-    // publish the indirection package
     try {
       const { all: output } = await execa(
         "npm",
         ["publish", "--registry=http://localhost:4873"],
         {
           all: true,
-          cwd: pkgPath,
+          cwd: packagePath,
         }
       );
-      await fs.writeFile(path.join(pkgPath, "publish.log"), output);
+      await fs.writeFile(path.join(packagePath, "publish.log"), output);
     } catch (error) {
       const { all: output } = error;
-      await fs.writeFile(path.join(pkgPath, "publish.log"), output);
+      await fs.writeFile(path.join(packagePath, "publish.log"), output);
       throw error;
     }
   }
 
+  async function copyPackageToVendor(packageName) {
+    const packagePath = path.join(projectPath, packageName);
+    const vendoredPackagePath = path.join(
+      projectPath,
+      "@my/vendor/vendored",
+      packageName
+    );
+
+    // Try to clear the previous version of this vendored package
+    try {
+      await fs.rm(vendoredPackagePath, { recursive: true });
+    } catch (error) {
+      // it may not have existed
+    }
+
+    await fs.cp(packagePath, vendoredPackagePath, { recursive: true });
+
+    await patchPackageSource(vendoredPackagePath, (source) => {
+      source.name = source.name + "-vendored";
+    });
+
+    return vendoredPackagePath;
+  }
+
+  async function patchPackageSource(packagePath, patch) {
+    const packageSource = JSON.parse(
+      await fs.readFile(path.join(packagePath, "package.json"), "utf-8")
+    );
+    await patch(packageSource);
+    await fs.writeFile(
+      path.join(packagePath, "package.json"),
+      JSON.stringify(packageSource, null, 2)
+    );
+  }
+
+  console.log("killing here");
   // EOF
   verdaccioProcess.kill();
   return;
-
-  const strategies = await fs.readdir(path.join(projectPath, "strategies"));
-  const updated = [];
-  for (const strategy of strategies) {
-    const strategyPath = path.join(projectPath, "strategies", strategy);
-    await fs.rm(path.join(strategyPath, "vendored"), { recursive: true });
-    await fs.mkdir(path.join(strategyPath, "vendored"));
-    await fs.copyFile(
-      tarballSourcePath,
-      path.join(strategyPath, "vendored", packageToVendorName + ".tgz")
-    );
-    updated.push(strategy);
-
-    console.log("starting", strategy);
-    const { all: output } = await execa(
-      "npm",
-      ["publish", "--registry=http://localhost:4873"],
-      {
-        all: true,
-        cwd: strategyPath,
-      }
-    );
-    console.log("strategy", strategy, output);
-
-    // const { stdout: strategyTarballName } = await execa("npm", ["pack"], {
-    //   cwd: strategyPath,
-    // });
-    // await fs.rename(
-    //   path.join(strategyPath, strategyTarballName),
-    //   path.join(strategyPath, "strategy.tgz")
-    // );
-  }
-
-  await fs.rm(tarballSourcePath);
-
-  console.log(chalk.green("Success!"));
-  console.log();
-  console.log(
-    `The following strategy projects have been updated with the latest version of "${packageToVendorName}":`
-  );
-  for (const update of updated) {
-    console.log("   * " + chalk.magenta(update));
-  }
-  console.log();
-  console.log();
 }
 
 refreshStrategies();

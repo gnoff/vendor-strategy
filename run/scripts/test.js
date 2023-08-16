@@ -1,9 +1,11 @@
 const fs = require("node:fs/promises");
 const path = require("path");
+const { getDirectories } = require("./utils/utils.js");
 const argv = require("minimist")(process.argv.slice(2));
 
 async function runTests() {
   const projectPath = path.join(require.resolve("run"), "../..");
+  console.log("projectPath", projectPath);
 
   const { execa, $ } = await import("execa");
   const { default: chalk } = await import("chalk");
@@ -17,7 +19,9 @@ async function runTests() {
     }
   ).pipeAll(path.join(projectPath, "run", "verdaccio.log"));
 
-  const allStrategies = await fs.readdir(path.join(projectPath, "strategies"));
+  const allStrategies = await getDirectories(
+    path.join(projectPath, "@strategy")
+  );
 
   let requestedStrategies;
   if (argv._.length === 0) {
@@ -33,23 +37,23 @@ async function runTests() {
   // For each strategy we will clone the test
   let packageManagers = [
     // "npm@7.24.2",
-    // "npm@8.19.4",
+    "npm@8.19.4",
     // "npm@9.8.1",
     // "pnpm@7.33.6",
     // "pnpm@8.6.12",
-    "yarn@3.6.1",
-    "yarn@1.22.19",
+    // "yarn@3.6.1",
+    // "yarn@1.22.19",
   ];
-
-  const testPackageSource = JSON.parse(
-    await fs.readFile(path.join(projectPath, "test-package/package.json"))
-  );
 
   await clearResults();
 
-  for (const packageManager of packageManagers) {
-    for (const strategy of requestedStrategies) {
-      await runTest(strategy, packageManager, testPackageSource);
+  const tests = await getDirectories(path.join(projectPath, "tests"));
+
+  for (test of tests) {
+    for (const packageManager of packageManagers) {
+      for (const strategy of requestedStrategies) {
+        await runTest(test, strategy, packageManager);
+      }
     }
   }
 
@@ -58,7 +62,11 @@ async function runTests() {
   }
 
   async function clearResults() {
-    await fs.rm(path.join(projectPath, "results"), { recursive: true });
+    try {
+      await fs.rm(path.join(projectPath, "results"), { recursive: true });
+    } catch (error) {
+      // it may not exist
+    }
     await fs.mkdir(path.join(projectPath, "results"));
   }
 
@@ -73,7 +81,7 @@ async function runTests() {
 
   async function isValidStrategy(strategyName) {
     try {
-      await fs.stat(path.join(projectPath, "strategies", strategyName));
+      await fs.stat(path.join(projectPath, "@strategy", strategyName));
     } catch (error) {
       console.log(
         chalk.red("You are trying to test a strategy that does not exist: ") +
@@ -90,47 +98,50 @@ async function runTests() {
     }
   }
 
-  async function runTest(strategy, packageManager, packageSource) {
+  async function runTest(testName, strategy, packageManager) {
+    const testPath = path.join(projectPath, "tests", testName);
+    const packageSource = JSON.parse(
+      await fs.readFile(
+        path.join(projectPath, "tests", testName, "package.json")
+      )
+    );
+
     packageSource.packageManager = packageManager;
     if (packageSource.dependencies == null) {
       packageSource.dependencies = {};
     }
-    const folderName = `test-${strategy}-${packageManager.replace("@", "-")}`;
+    packageSource.dependencies["@strategy/" + strategy] = "latest";
+    const folderName = `test-${testName}-${strategy}-${packageManager.replace(
+      "@",
+      "-"
+    )}`;
     packageSource.name = folderName;
 
-    const testPath = path.join(projectPath, "results", folderName);
+    const resultPath = path.join(projectPath, "results", folderName);
 
-    await fs.cp(path.join(projectPath, "test-package"), testPath, {
+    await fs.cp(testPath, resultPath, {
       recursive: true,
     });
     await fs.writeFile(
-      path.join(testPath, "package.json"),
+      path.join(resultPath, "package.json"),
       JSON.stringify(packageSource, null, 2)
     );
     const indexFileString = await fs.readFile(
-      path.join(testPath, "index.js"),
+      path.join(resultPath, "index.js"),
       "utf8"
     );
     await fs.writeFile(
-      path.join(testPath, "index.js"),
+      path.join(resultPath, "index.js"),
       indexFileString.replace(
         "%% REPLACED FOR EACH TEST %%",
         `@strategy/${strategy}`
       )
     );
 
-    let installPackage;
     let installCommand;
     let runCommand;
     switch (packageManager.slice(0, 3)) {
       case "npm":
-        installPackage = [
-          "corepack",
-          "npm",
-          "install",
-          `@strategy/${strategy}`,
-          "--registry=http://localhost:4873",
-        ];
         installCommand = [
           "corepack",
           "npm",
@@ -140,23 +151,10 @@ async function runTests() {
         runCommand = ["node", "index.js"];
         break;
       case "yar":
-        installPackage = [
-          "corepack",
-          "yarn",
-          "add",
-          `@strategy/${strategy}@1.0.0`,
-        ];
         installCommand = ["corepack", "yarn", "install"];
         runCommand = ["corepack", "yarn", "node", "index.js"];
         break;
       case "pnp":
-        installPackage = [
-          "corepack",
-          "pnpm",
-          "add",
-          `@strategy/${strategy}`,
-          "--registry=http://localhost:4873",
-        ];
         installCommand = [
           "corepack",
           "pnpm",
@@ -169,26 +167,26 @@ async function runTests() {
 
     const $$ = $({
       all: true,
-      cwd: testPath,
+      cwd: resultPath,
     });
 
     try {
       // const { all: installOutput } = await $$`corepack ${pmName} install`;
-      const { all: installOutput } = await $$`${installPackage}`;
-      fs.writeFile(path.join(testPath, "output_install.txt"), installOutput);
+      const { all: installOutput } = await $$`${installCommand}`;
+      fs.writeFile(path.join(resultPath, "output_install.txt"), installOutput);
       try {
         const { all: runOutput } = await $$`${runCommand}`;
-        fs.writeFile(path.join(testPath, "output_run.txt"), runOutput);
+        fs.writeFile(path.join(resultPath, "output_run.txt"), runOutput);
       } catch (error) {
         const { all: runOutput } = error;
-        fs.writeFile(path.join(testPath, "output_run.txt"), runOutput);
+        fs.writeFile(path.join(resultPath, "output_run.txt"), runOutput);
       }
     } catch (error) {
       console.log("error", error);
       const { all: installOutput } = error;
-      fs.writeFile(path.join(testPath, "output_install.txt"), installOutput);
+      fs.writeFile(path.join(resultPath, "output_install.txt"), installOutput);
       fs.writeFile(
-        path.join(testPath, "output_run.txt"),
+        path.join(resultPath, "output_run.txt"),
         "<<< Install Failed. Test did not run. >>>"
       );
     }

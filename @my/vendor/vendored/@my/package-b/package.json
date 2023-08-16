@@ -1,5 +1,5 @@
 {
-  "name": "@my/package-b",
+  "name": "@my/package-b-vendored",
   "version": "1.0.48",
   "description": "",
   "main": "index.js",

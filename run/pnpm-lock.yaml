@@ -20,6 +20,9 @@ dependencies:
   mkcert:
     specifier: ^1.5.1
     version: 1.5.1
+  outdent:
+    specifier: ^0.8.0
+    version: 0.8.0
   verdaccio:
     specifier: ^5.26.1
     version: 5.26.1(typanion@3.14.0)
@@ -1349,6 +1352,10 @@ packages:
   /opener@1.5.2:
     resolution: {integrity: sha512-ur5UIdyw5Y7yEj9wLzhqXiy6GZ3Mwx0yGI+5sMn2r0N0v3cKJvUmFH5yPP+WXh9e0xfyzyJX95D8l088DNFj7A==}
     hasBin: true
+    dev: false
+
+  /outdent@0.8.0:
+    resolution: {integrity: sha512-KiOAIsdpUTcAXuykya5fnVVT+/5uS0Q1mrkRHcF89tpieSmY33O/tmc54CqwA+bfhbtEfZUNLHaPUiB9X3jt1A==}
     dev: false
 
   /parseurl@1.3.3:

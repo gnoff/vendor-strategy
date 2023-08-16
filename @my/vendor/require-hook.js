@@ -1,8 +1,39 @@
 const Module = require("module");
+const path = require("path");
+
+const packagesToVendor = ["@my/package-a", "@my/package-b"];
+
+const vendoredPackages = new Map();
+
+console.log("vendor::: installing require hook for vendored packages");
+
+const vendoredPath = path.join(
+  require.resolve("@my/vendor/package.json"),
+  "../vendored"
+);
+for (let package of packagesToVendor) {
+  try {
+    const resolveTopLevelExports = require(path.join(
+      vendoredPath,
+      package,
+      "__vendored_proxy_exports.js"
+    ));
+    vendoredPackages.set(
+      package,
+      new Map(Object.entries(resolveTopLevelExports))
+    );
+  } catch (error) {
+    if (error.code !== "MODULE_NOT_FOUND") {
+      throw error;
+    }
+    // it may not exist and this means the project just uses path resolution
+    vendoredPackages.set(package, null);
+  }
+}
 
 const originalResolveFilename = Module._resolveFilename;
 
-mod._resolveFilename = function (request, parent, isMain, options) {
+Module._resolveFilename = function (request, parent, isMain, options) {
   let slash = request.indexOf("/");
   if (request[0] === "@") {
     slash = request.indexOf("/", slash + 1);
@@ -17,11 +48,19 @@ mod._resolveFilename = function (request, parent, isMain, options) {
     specifierPath = request.slice(slash);
   }
 
-  switch (specifierBase) {
-    case "@my/package-a":
-    case "@my/package-b": {
+  if (vendoredPackages.has(specifierBase)) {
+    const exportPath = specifierPath === "" ? "." : specifierPath;
+    const map = vendoredPackages.get(specifierBase);
+    if (map && map.has(exportPath)) {
       return originalResolveFilename(
-        "@my/vendor/vendored/" + specifierBase.split("/")[1] + specifierPath,
+        path.join("@my/vendor/vendored", specifierBase, map.get(exportPath)),
+        parent,
+        isMain,
+        options
+      );
+    } else {
+      return originalResolveFilename(
+        path.join("@my/vendor/vendored", request),
         parent,
         isMain,
         options
@@ -30,6 +69,4 @@ mod._resolveFilename = function (request, parent, isMain, options) {
   }
 
   return originalResolveFilename(request, parent, isMain, options);
-
-  // We use `bind` here to avoid referencing outside variables to create potential memory leaks.
-}.bind(null, resolveFilename, hookPropertyMap);
+};
