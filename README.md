@@ -1,2 +1,2 @@
-# file-tarball-install-differences
-fixture for demonstrating different semantics when installing `file:....tgz` dependencies with various package managers
+# Vendor Strategies
+fixture for testing different strategies for vendoring packages in a way transparent to the consumer.
