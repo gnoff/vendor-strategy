@@ -3,3 +3,4 @@ results
 **/registry/storage/
 **/*.log
 !**/saved-results/**/*.log
+.DS_store
