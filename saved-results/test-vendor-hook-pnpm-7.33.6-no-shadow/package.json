@@ -1,0 +1,13 @@
+{
+  "name": "test-vendor-hook-pnpm-7.33.6-no-shadow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@7.33.6",
+  "dependencies": {
+    "@strategy/vendor-hook": "latest"
+  }
+}

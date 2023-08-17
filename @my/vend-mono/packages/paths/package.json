@@ -1,0 +1,23 @@
+{
+  "name": "@my/vend-paths",
+  "version": "1.0.175",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "vendored"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@my/log": "1.0.175",
+    "client-only": "^0.0.1",
+    "server-only": "^0.0.1"
+  }
+}

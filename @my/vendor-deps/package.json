@@ -1,0 +1,36 @@
+{
+  "name": "@my/vendor-deps",
+  "version": "1.0.175",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "require-hook.js",
+    "exports",
+    "vendored"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@my/log": "1.0.175",
+    "my-package-a-vendored": "file:vendored/@my/package-a",
+    "my-package-b-vendored": "file:vendored/@my/package-b",
+    "client-only": "^0.0.1",
+    "server-only": "^0.0.1"
+  },
+  "bundledDependencies": [
+    "my-package-a-vendored",
+    "my-package-b-vendored"
+  ],
+  "bundleDependencies": [
+    "my-package-a-vendored",
+    "my-package-b-vendored"
+  ]
+}

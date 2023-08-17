@@ -1,0 +1,65 @@
+> corepack yarn node index.js
+yarn node v1.22.19
+@strategy/vendor-hook::: running index.js
+@strategy/vendor-hook::: requiring @my/vendor-hook
+@my/vendor-hook::: running index.js
+@my/vendor-hook::: about to install require-hook
+@my/vendor-hook::: running exports/@my/package-a
+@my/vendor-hook::: module.exports {
+  '.': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-1.22.19-shadow/node_modules/@my/vendor-hook/vendored/@my/package-a/index.js',
+  './foo': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-1.22.19-shadow/node_modules/@my/vendor-hook/vendored/@my/package-a/foo.js',
+  './bar': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-1.22.19-shadow/node_modules/@my/vendor-hook/vendored/@my/package-a/bar.js'
+}
+@my/vendor-hook::: installing require hook for vendored packages
+test/no-shadow::: running index.js
+test/no-shadow::: requiring @my/package-a
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-a::: running @my/package-a
+deeper -> 1
+shallower <- 0
+test/no-shadow::: requiring @my/package-b
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-b::: running @my/package-b
+deeper -> 1
+shallower <- 0
+test/no-shadow::: requiring @my/package-a/foo
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-a::: running @my/package-a/foo
+test/no-shadow::: requiring @my/package-b/foo
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-b::: running @my/package-b/foo
+test/no-shadow::: requiring @my/package-a/bar
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-a::: running @my/package-a/bar
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-b::: running @my/package-b/bar
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-b::: other a-bar
+[VENDORED] @my/package-a::: other b-bar
+test/no-shadow::: requiring @my/package-b/bar
+deeper -> 1
+shallower <- 0
+Done in 0.06s.

@@ -1,0 +1,15 @@
+> corepack pnpm up && corepack pnpm install --registry=http://localhost:4873
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +7
++++++++
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /Users/joshstory/Library/pnpm/store/v3
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 7, reused 7, downloaded 0, added 7, done
+
+dependencies:
++ @my/package-a 1.0.175
++ @my/package-b 1.0.175
++ @strategy/vendor-deps 1.0.175
+
+Done in 244ms

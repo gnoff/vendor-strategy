@@ -1,0 +1,15 @@
+{
+  "name": "test-vend-npm-8.19.4-transitive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "npm@8.19.4",
+  "dependencies": {
+    "@my/package-trans-a": "1.0.175",
+    "@my/package-trans-b": "1.0.175",
+    "@strategy/vend": "latest"
+  }
+}

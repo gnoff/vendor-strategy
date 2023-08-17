@@ -1,0 +1,43 @@
+> node -C cond index.js
+@strategy/vend::: running index.js
+@strategy/vend::: requiring @my/vend
+@my/vend::: running index.js
+@my/vend::: requiring ./require-hook
+@my/vend::: installing require hook for vendored packages
+@my/vend::: running vendored-exports.js
+@my/vend::: running vendored-paths.js
+alias Map(2) {
+  '@my/package-a' => '@my/vend-exports/vendored/@my/package-a',
+  '@my/package-b' => '@my/vend-paths/vendored/@my/package-b'
+}
+test/no-shadow::: running index.js
+test/no-shadow::: requiring @my/package-a (not a dep of this project)
+resolving @my/vend-exports/vendored/@my/package-a
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-npm-7.24.2-no-shadow-cond/node_modules/@my/vend-exports/vendored/@my/package-a/index.cond.js
+[VENDORED] @my/package-a::: running @my/package-a with condition "cond"
+test/no-shadow::: requiring @my/package-b (not a dep of this project)
+resolving @my/vend-paths/vendored/@my/package-b
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-npm-7.24.2-no-shadow-cond/node_modules/@my/vend-paths/vendored/@my/package-b/index.js
+[VENDORED] @my/package-b::: running @my/package-b
+test/no-shadow::: requiring @my/package-a/foo (not a dep of this project)
+resolving @my/vend-exports/vendored/@my/package-a/foo
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-npm-7.24.2-no-shadow-cond/node_modules/@my/vend-exports/vendored/@my/package-a/foo.cond.js
+[VENDORED] @my/package-a::: running @my/package-a/foo with condition "cond"
+test/no-shadow::: requiring @my/package-b/foo (not a dep of this project)
+resolving @my/vend-paths/vendored/@my/package-b/foo
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-npm-7.24.2-no-shadow-cond/node_modules/@my/vend-paths/vendored/@my/package-b/foo.js
+[VENDORED] @my/package-b::: running @my/package-b/foo
+test/no-shadow::: requiring @my/package-a/bar
+resolving @my/vend-exports/vendored/@my/package-a/bar
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-npm-7.24.2-no-shadow-cond/node_modules/@my/vend-exports/vendored/@my/package-a/bar.cond.js
+[VENDORED] @my/package-a::: running @my/package-a/bar with condition "cond"
+resolving @my/vend-paths/vendored/@my/package-b/bar
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-npm-7.24.2-no-shadow-cond/node_modules/@my/vend-paths/vendored/@my/package-b/bar.js
+[VENDORED] @my/package-b::: running @my/package-b/bar
+resolving @my/vend-exports/vendored/@my/package-a/bar
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-npm-7.24.2-no-shadow-cond/node_modules/@my/vend-exports/vendored/@my/package-a/bar.cond.js
+[VENDORED] @my/package-b::: other a-bar cond
+[VENDORED] @my/package-a::: other b-bar
+test/no-shadow::: requiring @my/package-b/bar
+resolving @my/vend-paths/vendored/@my/package-b/bar
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-npm-7.24.2-no-shadow-cond/node_modules/@my/vend-paths/vendored/@my/package-b/bar.js

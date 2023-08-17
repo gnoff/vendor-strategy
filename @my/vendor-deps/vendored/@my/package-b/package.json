@@ -1,0 +1,25 @@
+{
+  "name": "my-package-b-vendored",
+  "version": "1.0.175",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "foo.js",
+    "bar.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "dependencies": {
+    "@my/log": "1.0.175",
+    "client-only": "^0.0.1",
+    "server-only": "^0.0.1"
+  }
+}

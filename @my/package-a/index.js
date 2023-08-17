@@ -1,5 +1,8 @@
+const makeLog = require("@my/log");
+const log = makeLog("@my/package-a::: ");
+
 require("client-only");
-console.log("package-a::: running @my/package-a");
+log("running @my/package-a");
 try {
   require("server-only");
 } catch (error) {

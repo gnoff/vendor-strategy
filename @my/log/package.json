@@ -1,0 +1,21 @@
+{
+  "name": "@my/log",
+  "version": "1.0.175",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  }
+}

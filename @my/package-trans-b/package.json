@@ -1,0 +1,22 @@
+{
+  "name": "@my/package-trans-b",
+  "version": "1.0.175",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "dependencies": {
+    "@my/log": "1.0.175",
+    "@my/package-b": "1.0.175"
+  }
+}

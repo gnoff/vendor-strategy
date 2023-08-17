@@ -1,0 +1,41 @@
+{
+  "name": "@my/vend-exports",
+  "version": "1.0.175",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "vendored"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@my/log": "1.0.175",
+    "client-only": "^0.0.1",
+    "server-only": "^0.0.1"
+  },
+  "exports": {
+    "./vendored/@my/package-a": {
+      "cond": "./vendored/@my/package-a/index.cond.js",
+      "default": "./vendored/@my/package-a/index.js"
+    },
+    "./vendored/@my/package-a/foo": {
+      "cond": "./vendored/@my/package-a/foo.cond.js",
+      "complex": {
+        "fake": "./vendored/@my/package-a/foo.js",
+        "default": "./vendored/@my/package-a/foo.js"
+      },
+      "default": "./vendored/@my/package-a/foo.js"
+    },
+    "./vendored/@my/package-a/bar": {
+      "cond": "./vendored/@my/package-a/bar.cond.js",
+      "default": "./vendored/@my/package-a/bar.js"
+    }
+  }
+}

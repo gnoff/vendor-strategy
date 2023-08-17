@@ -1,0 +1,13 @@
+{
+  "name": "test-vend-pnpm-8.6.12-no-shadow-cond",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@8.6.12",
+  "dependencies": {
+    "@strategy/vend": "latest"
+  }
+}

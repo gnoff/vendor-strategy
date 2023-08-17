@@ -1,0 +1,29 @@
+{
+  "name": "@my/vend",
+  "version": "1.0.154",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "require-hook.js",
+    "vendored-exports.js",
+    "vendored-paths.js"
+  ],
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@my/log": "1.0.154",
+    "client-only": "^0.0.1",
+    "server-only": "^0.0.1"
+  }
+}

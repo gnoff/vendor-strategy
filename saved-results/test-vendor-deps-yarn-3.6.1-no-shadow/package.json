@@ -1,0 +1,13 @@
+{
+  "name": "test-vendor-deps-yarn-3.6.1-no-shadow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "yarn@3.6.1",
+  "dependencies": {
+    "@strategy/vendor-deps": "latest"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "test-vendor-hook-npm-8.19.4-no-shadow-cond",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "npm@8.19.4",
+  "dependencies": {
+    "@strategy/vendor-hook": "latest"
+  }
+}

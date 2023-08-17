@@ -1,0 +1,13 @@
+{
+  "name": "test-vendor-hook-npm-7.24.2-no-shadow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "npm@7.24.2",
+  "dependencies": {
+    "@strategy/vendor-hook": "latest"
+  }
+}

@@ -1,1 +1,4 @@
-console.log("package-a::: running @my/package-a/foo");
+const makeLog = require("@my/log");
+const log = makeLog("@my/package-a::: ");
+
+log("running @my/package-a/foo");

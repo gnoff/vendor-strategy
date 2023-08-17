@@ -1,0 +1,75 @@
+> node index.js
+@strategy/vendor-deps::: running index.js
+@strategy/vendor-deps::: requiring @my/vendor-deps
+@my/vendor-deps::: running index.js
+@my/vendor-deps::: about to install require-hook
+@my/vendor-deps::: running exports/@my/package-a
+@my/vendor-deps::: module.exports {
+  '.': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-npm-7.24.2-transitive/node_modules/@my/vendor-deps/vendored/@my/package-a/index.js',
+  './foo': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-npm-7.24.2-transitive/node_modules/@my/vendor-deps/vendored/@my/package-a/foo.js',
+  './bar': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-npm-7.24.2-transitive/node_modules/@my/vendor-deps/vendored/@my/package-a/bar.js'
+}
+@my/vendor-deps::: installing require hook for vendored packages
+test/transitive::: running index.js
+test/transitive::: acquiring package-a transitive getter
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+@my/package-trans-a::: running @my/package-trans-a
+test/transitive::: acquiring package-b transitive getter
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+@my/package-trans-b::: running @my/package-trans-b
+test/transitive::: requiring @my/package-a
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-a::: running @my/package-a
+deeper -> 1
+shallower <- 0
+test/transitive::: requiring @my/package-b
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-b::: running @my/package-b
+deeper -> 1
+shallower <- 0
+test/transitive::: requiring @my/package-a/foo
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-a::: running @my/package-a/foo
+test/transitive::: requiring @my/package-b/foo
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-b::: running @my/package-b/foo
+test/transitive::: requiring @my/package-a/bar
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-a::: running @my/package-a/bar
+deeper -> 1
+shallower <- 0
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-b::: running @my/package-b/bar
+deeper -> 1
+shallower <- 0
+[VENDORED] @my/package-b::: other a-bar
+[VENDORED] @my/package-a::: other b-bar
+test/transitive::: requiring @my/package-b/bar
+deeper -> 1
+shallower <- 0

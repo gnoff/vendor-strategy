@@ -1,0 +1,13 @@
+> corepack yarn install
+➤ YN0000: ┌ Resolution step
+➤ YN0000: └ Completed
+➤ YN0000: ┌ Fetch step
+➤ YN0013: │ @my/log@npm:1.0.175 can't be found in the cache and will be fetched from the remote registry
+➤ YN0013: │ @my/vendor-hook@npm:1.0.175 can't be found in the cache and will be fetched from the remote registry
+➤ YN0013: │ @strategy/vendor-hook@npm:1.0.175 can't be found in the cache and will be fetched from the remote registry
+➤ YN0013: │ client-only@npm:0.0.1 can't be found in the cache and will be fetched from the remote registry
+➤ YN0013: │ server-only@npm:0.0.1 can't be found in the cache and will be fetched from the remote registry
+➤ YN0000: └ Completed
+➤ YN0000: ┌ Link step
+➤ YN0000: └ Completed
+➤ YN0000: Done in 0s 219ms

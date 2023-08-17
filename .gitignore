@@ -1,5 +1,5 @@
 node_modules
 results
 **/registry/storage/
-*.log
+**/*.log
 !**/saved-results/**/*.log

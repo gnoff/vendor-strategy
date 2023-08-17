@@ -1,0 +1,46 @@
+{
+  "name": "my-package-a-vendored",
+  "version": "1.0.175",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.cond.js",
+    "foo.js",
+    "foo.cond.js",
+    "bar.js",
+    "bar.cond.js"
+  ],
+  "exports": {
+    ".": {
+      "cond": "./index.cond.js",
+      "default": "./index.js"
+    },
+    "./foo": {
+      "cond": "./foo.cond.js",
+      "complex": {
+        "fake": "./foo.js",
+        "default": "./foo.js"
+      },
+      "default": "./foo.js"
+    },
+    "./bar": {
+      "cond": "./bar.cond.js",
+      "default": "./bar.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "dependencies": {
+    "@my/log": "1.0.175",
+    "client-only": "^0.0.1",
+    "server-only": "^0.0.1"
+  }
+}

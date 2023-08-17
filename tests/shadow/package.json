@@ -1,0 +1,14 @@
+{
+  "name": "test-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "%% REPLACED FOR EACH TEST %%",
+  "dependencies": {
+    "@my/package-a": "%% REPLACED FOR EACH TEST %%",
+    "@my/package-b": "%% REPLACED FOR EACH TEST %%"
+  }
+}
