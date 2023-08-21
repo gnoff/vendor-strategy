@@ -5,6 +5,8 @@ const {
   getDirectories,
   getJSFiles,
   patchPackageSource,
+  cleanDir,
+  safeWriteFile,
 } = require("./utils/utils.js");
 const argv = require("minimist")(process.argv.slice(2));
 
@@ -70,6 +72,8 @@ async function refreshStrategies() {
         outdent,
         getJSFiles,
         patchPackageSource,
+        cleanDir,
+        safeWriteFile,
       });
     } else {
       await patchPackageSource(packagePath, async (source) => {

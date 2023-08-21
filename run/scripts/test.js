@@ -31,13 +31,26 @@ async function runTests() {
 
   const allTests = await getDirectories(path.join(projectPath, "tests"));
 
-  let requestedStrategies, requestedTests;
+  // For each strategy we will clone the test
+  let allPackageManagers = [
+    "npm@7.24.2",
+    "npm@8.19.4",
+    // "npm@9.8.1",
+    "pnpm@7.33.6",
+    "pnpm@8.6.12",
+    "yarn@3.6.1",
+    "yarn@1.22.19",
+  ];
+
+  let requestedStrategies, requestedTests, requestedPackageManagers;
   if (argv._.length === 0) {
     requestedStrategies = allStrategies;
     requestedTests = allTests;
+    requestedPackageManagers = allPackageManagers;
   } else {
     requestedStrategies = [];
     requestedTests = [];
+    const pmSet = new Set();
     for (arg of argv._) {
       let validated = false;
       if (allStrategies.includes(arg)) {
@@ -47,6 +60,10 @@ async function runTests() {
       if (allTests.includes(arg)) {
         validated = true;
         requestedTests.push(arg);
+      }
+      for (let pm of allPackageManagers.filter((pm) => pm.startsWith(arg))) {
+        validated = true;
+        pmSet.add(pm);
       }
       if (!validated) {
         existOnInvalidStrategyOrTest(arg);
@@ -58,25 +75,19 @@ async function runTests() {
     if (requestedTests.length === 0) {
       requestedTests = allTests;
     }
+    if (pmSet.size === 0) {
+      requestedPackageManagers = allPackageManagers;
+    } else {
+      requestedPackageManagers = [...pmSet];
+    }
   }
-
-  // For each strategy we will clone the test
-  let packageManagers = [
-    "npm@7.24.2",
-    "npm@8.19.4",
-    // "npm@9.8.1",
-    "pnpm@7.33.6",
-    "pnpm@8.6.12",
-    "yarn@3.6.1",
-    "yarn@1.22.19",
-  ];
 
   await clearResults();
 
   let runs = [];
 
   for (const strategy of requestedStrategies) {
-    for (const packageManager of packageManagers) {
+    for (const packageManager of requestedPackageManagers) {
       for (test of requestedTests) {
         await runTest(test, strategy, packageManager);
       }

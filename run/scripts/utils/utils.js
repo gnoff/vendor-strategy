@@ -43,9 +43,29 @@ async function publish(packageName) {
   }
 }
 
+async function cleanDir(path) {
+  try {
+    await fs.rm(path, { recursive: true });
+  } catch (error) {
+    // it may not have existed
+  }
+}
+
+async function safeWriteFile(filePath, content) {
+  const dir = path.dirname(filePath);
+  try {
+    await fs.mkdir(dir, { recursive: true });
+  } catch (error) {
+    // it may already exist
+  }
+  await fs.writeFile(filePath, content);
+}
+
 module.exports = {
   getDirectories,
   getJSFiles,
   patchPackageSource,
   publish,
+  cleanDir,
+  safeWriteFile,
 };
