@@ -8,8 +8,8 @@
   "license": "ISC",
   "packageManager": "pnpm@8.6.12",
   "dependencies": {
-    "@my/package-a": "1.0.175",
-    "@my/package-b": "1.0.175",
+    "@my/package-a": "1.0.204",
+    "@my/package-b": "1.0.204",
     "@strategy/vendor-deps": "latest"
   }
 }

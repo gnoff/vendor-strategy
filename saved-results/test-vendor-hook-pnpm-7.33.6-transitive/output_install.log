@@ -7,9 +7,9 @@ Packages are hard linked from the content-addressable store to the virtual store
   Virtual store is at:             node_modules/.pnpm
 
 dependencies:
-+ @my/package-trans-a 1.0.175
-+ @my/package-trans-b 1.0.175
-+ @strategy/vendor-hook 1.0.175
++ @my/package-trans-a 1.0.204
++ @my/package-trans-b 1.0.204
++ @strategy/vendor-hook 1.0.204
 
-Done in 242ms
+Done in 241ms
 Progress: resolved 9, reused 9, downloaded 0, added 9, done

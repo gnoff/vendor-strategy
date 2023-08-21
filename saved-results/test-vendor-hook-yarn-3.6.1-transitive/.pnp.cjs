@@ -28,28 +28,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@my/package-trans-a", "npm:1.0.175"],\
-            ["@my/package-trans-b", "npm:1.0.175"],\
-            ["@strategy/vendor-hook", "npm:1.0.175"]\
+            ["@my/package-trans-a", "npm:1.0.204"],\
+            ["@my/package-trans-b", "npm:1.0.204"],\
+            ["@strategy/vendor-hook", "npm:1.0.204"]\
           ],\
           "linkType": "SOFT"\
         }]\
       ]],\
       ["@my/log", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-log-npm-1.0.175-3b52596d92-b08bb267d0.zip/node_modules/@my/log/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-log-npm-1.0.204-771830157b-abcd8095b3.zip/node_modules/@my/log/",\
           "packageDependencies": [\
-            ["@my/log", "npm:1.0.175"]\
+            ["@my/log", "npm:1.0.204"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@my/package-a", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-package-a-npm-1.0.175-898337cccb-75bd333e39.zip/node_modules/@my/package-a/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-package-a-npm-1.0.204-4803476b20-50774883a7.zip/node_modules/@my/package-a/",\
           "packageDependencies": [\
-            ["@my/package-a", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
+            ["@my/package-a", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
             ["client-only", "npm:0.0.1"],\
             ["server-only", "npm:0.0.1"]\
           ],\
@@ -57,11 +57,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@my/package-b", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-package-b-npm-1.0.175-25aa1eeea6-d56d0d9d24.zip/node_modules/@my/package-b/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-package-b-npm-1.0.204-c72234f3b7-315018a392.zip/node_modules/@my/package-b/",\
           "packageDependencies": [\
-            ["@my/package-b", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
+            ["@my/package-b", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
             ["client-only", "npm:0.0.1"],\
             ["server-only", "npm:0.0.1"]\
           ],\
@@ -69,33 +69,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@my/package-trans-a", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-package-trans-a-npm-1.0.175-06b625517d-2d2b5fddf6.zip/node_modules/@my/package-trans-a/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-package-trans-a-npm-1.0.204-8b10b9585a-0884948aca.zip/node_modules/@my/package-trans-a/",\
           "packageDependencies": [\
-            ["@my/package-trans-a", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
-            ["@my/package-a", "npm:1.0.175"]\
+            ["@my/package-trans-a", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
+            ["@my/package-a", "npm:1.0.204"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@my/package-trans-b", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-package-trans-b-npm-1.0.175-2489de132e-45c5983e1d.zip/node_modules/@my/package-trans-b/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-package-trans-b-npm-1.0.204-e21c55735a-d12e115477.zip/node_modules/@my/package-trans-b/",\
           "packageDependencies": [\
-            ["@my/package-trans-b", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
-            ["@my/package-b", "npm:1.0.175"]\
+            ["@my/package-trans-b", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
+            ["@my/package-b", "npm:1.0.204"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@my/vendor-hook", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-vendor-hook-npm-1.0.175-bfff7db008-91e14da22a.zip/node_modules/@my/vendor-hook/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-vendor-hook-npm-1.0.204-0a88c5fda4-d2ca6501d9.zip/node_modules/@my/vendor-hook/",\
           "packageDependencies": [\
-            ["@my/vendor-hook", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
+            ["@my/vendor-hook", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
             ["client-only", "npm:0.0.1"],\
             ["server-only", "npm:0.0.1"]\
           ],\
@@ -103,12 +103,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@strategy/vendor-hook", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@strategy-vendor-hook-npm-1.0.175-2ebc2f0a01-8ddfa11985.zip/node_modules/@strategy/vendor-hook/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@strategy-vendor-hook-npm-1.0.204-0113ab54d9-bd139f4020.zip/node_modules/@strategy/vendor-hook/",\
           "packageDependencies": [\
-            ["@strategy/vendor-hook", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
-            ["@my/vendor-hook", "npm:1.0.175"]\
+            ["@strategy/vendor-hook", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
+            ["@my/vendor-hook", "npm:1.0.204"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -136,9 +136,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["test-vendor-hook-yarn-3.6.1-transitive", "workspace:."],\
-            ["@my/package-trans-a", "npm:1.0.175"],\
-            ["@my/package-trans-b", "npm:1.0.175"],\
-            ["@strategy/vendor-hook", "npm:1.0.175"]\
+            ["@my/package-trans-a", "npm:1.0.204"],\
+            ["@my/package-trans-b", "npm:1.0.204"],\
+            ["@strategy/vendor-hook", "npm:1.0.204"]\
           ],\
           "linkType": "SOFT"\
         }]\

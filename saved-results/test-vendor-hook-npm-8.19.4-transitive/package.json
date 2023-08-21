@@ -8,8 +8,8 @@
   "license": "ISC",
   "packageManager": "npm@8.19.4",
   "dependencies": {
-    "@my/package-trans-a": "1.0.175",
-    "@my/package-trans-b": "1.0.175",
+    "@my/package-trans-a": "1.0.204",
+    "@my/package-trans-b": "1.0.204",
     "@strategy/vendor-hook": "latest"
   }
 }

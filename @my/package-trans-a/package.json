@@ -1,6 +1,6 @@
 {
   "name": "@my/package-trans-a",
-  "version": "1.0.175",
+  "version": "1.0.204",
   "description": "",
   "main": "index.js",
   "files": [
@@ -19,7 +19,7 @@
     "registry": "http://localhost:4873"
   },
   "dependencies": {
-    "@my/log": "1.0.175",
-    "@my/package-a": "1.0.175"
+    "@my/log": "1.0.204",
+    "@my/package-a": "1.0.204"
   }
 }

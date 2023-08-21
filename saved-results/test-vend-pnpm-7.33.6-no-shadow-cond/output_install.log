@@ -7,7 +7,7 @@ Packages are hard linked from the content-addressable store to the virtual store
   Virtual store is at:             node_modules/.pnpm
 
 dependencies:
-+ @strategy/vend 1.0.175
++ @strategy/vend 1.0.204
 
-Done in 245ms
+Done in 227ms
 Progress: resolved 7, reused 7, downloaded 0, added 7, done

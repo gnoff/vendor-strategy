@@ -28,28 +28,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@my/package-a", "npm:1.0.175"],\
-            ["@my/package-b", "npm:1.0.175"],\
-            ["@strategy/vend", "npm:1.0.175"]\
+            ["@my/package-a", "npm:1.0.204"],\
+            ["@my/package-b", "npm:1.0.204"],\
+            ["@strategy/vend", "npm:1.0.204"]\
           ],\
           "linkType": "SOFT"\
         }]\
       ]],\
       ["@my/log", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-log-npm-1.0.175-3b52596d92-b08bb267d0.zip/node_modules/@my/log/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-log-npm-1.0.204-771830157b-abcd8095b3.zip/node_modules/@my/log/",\
           "packageDependencies": [\
-            ["@my/log", "npm:1.0.175"]\
+            ["@my/log", "npm:1.0.204"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@my/package-a", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-package-a-npm-1.0.175-898337cccb-75bd333e39.zip/node_modules/@my/package-a/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-package-a-npm-1.0.204-4803476b20-50774883a7.zip/node_modules/@my/package-a/",\
           "packageDependencies": [\
-            ["@my/package-a", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
+            ["@my/package-a", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
             ["client-only", "npm:0.0.1"],\
             ["server-only", "npm:0.0.1"]\
           ],\
@@ -57,11 +57,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@my/package-b", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-package-b-npm-1.0.175-25aa1eeea6-d56d0d9d24.zip/node_modules/@my/package-b/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-package-b-npm-1.0.204-c72234f3b7-315018a392.zip/node_modules/@my/package-b/",\
           "packageDependencies": [\
-            ["@my/package-b", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
+            ["@my/package-b", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
             ["client-only", "npm:0.0.1"],\
             ["server-only", "npm:0.0.1"]\
           ],\
@@ -69,23 +69,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@my/vend", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-vend-npm-1.0.175-7b8e368b14-23c1cfc90a.zip/node_modules/@my/vend/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-vend-npm-1.0.204-caa63a429c-ba480a233a.zip/node_modules/@my/vend/",\
           "packageDependencies": [\
-            ["@my/vend", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
-            ["@my/vend-exports", "npm:1.0.175"],\
-            ["@my/vend-paths", "npm:1.0.175"]\
+            ["@my/vend", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
+            ["@my/vend-exports", "npm:1.0.204"],\
+            ["@my/vend-paths", "npm:1.0.204"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@my/vend-exports", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-vend-exports-npm-1.0.175-91bf23abef-96488b6121.zip/node_modules/@my/vend-exports/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-vend-exports-npm-1.0.204-1b43db42bc-2f8fb19712.zip/node_modules/@my/vend-exports/",\
           "packageDependencies": [\
-            ["@my/vend-exports", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
+            ["@my/vend-exports", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
             ["client-only", "npm:0.0.1"],\
             ["server-only", "npm:0.0.1"]\
           ],\
@@ -93,11 +93,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@my/vend-paths", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-vend-paths-npm-1.0.175-6f54fc9a9a-e2901244cf.zip/node_modules/@my/vend-paths/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-vend-paths-npm-1.0.204-049d05eb94-eca6e87851.zip/node_modules/@my/vend-paths/",\
           "packageDependencies": [\
-            ["@my/vend-paths", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
+            ["@my/vend-paths", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
             ["client-only", "npm:0.0.1"],\
             ["server-only", "npm:0.0.1"]\
           ],\
@@ -105,12 +105,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@strategy/vend", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@strategy-vend-npm-1.0.175-8719f7d3a2-4b7fb742f4.zip/node_modules/@strategy/vend/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@strategy-vend-npm-1.0.204-6c65a8fff4-0e139e5da9.zip/node_modules/@strategy/vend/",\
           "packageDependencies": [\
-            ["@strategy/vend", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
-            ["@my/vend", "npm:1.0.175"]\
+            ["@strategy/vend", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
+            ["@my/vend", "npm:1.0.204"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -138,9 +138,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["test-vend-yarn-3.6.1-shadow", "workspace:."],\
-            ["@my/package-a", "npm:1.0.175"],\
-            ["@my/package-b", "npm:1.0.175"],\
-            ["@strategy/vend", "npm:1.0.175"]\
+            ["@my/package-a", "npm:1.0.204"],\
+            ["@my/package-b", "npm:1.0.204"],\
+            ["@strategy/vend", "npm:1.0.204"]\
           ],\
           "linkType": "SOFT"\
         }]\

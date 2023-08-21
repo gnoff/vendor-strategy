@@ -1,6 +1,6 @@
 {
   "name": "@my/vendor-deps",
-  "version": "1.0.175",
+  "version": "1.0.204",
   "description": "",
   "main": "index.js",
   "files": [
@@ -19,18 +19,10 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@my/log": "1.0.175",
+    "@my/log": "1.0.204",
     "my-package-a-vendored": "file:vendored/@my/package-a",
     "my-package-b-vendored": "file:vendored/@my/package-b",
     "client-only": "^0.0.1",
     "server-only": "^0.0.1"
-  },
-  "bundledDependencies": [
-    "my-package-a-vendored",
-    "my-package-b-vendored"
-  ],
-  "bundleDependencies": [
-    "my-package-a-vendored",
-    "my-package-b-vendored"
-  ]
+  }
 }

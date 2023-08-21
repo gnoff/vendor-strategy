@@ -5,73 +5,73 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@my/log@npm:1.0.175":
-  version: 1.0.175
-  resolution: "@my/log@npm:1.0.175"
-  checksum: b08bb267d002beb03cbdecd6fcb0623fcb94040f357a45ed2ff07556f953b023be11c4b8cc1465b47c2d511dc8bc797ec51e484b9b9eabc4ea8baf36c4e344e1
+"@my/log@npm:1.0.204":
+  version: 1.0.204
+  resolution: "@my/log@npm:1.0.204"
+  checksum: abcd8095b3ad6046dc17f2a64c41fd6fba527aa35903498b771811d72fc2019c109bb9bac0566e8a7060c0b90400f605965bde77fe9c7b8dda27235815c193a4
   languageName: node
   linkType: hard
 
-"@my/package-a@npm:1.0.175":
-  version: 1.0.175
-  resolution: "@my/package-a@npm:1.0.175"
+"@my/package-a@npm:1.0.204":
+  version: 1.0.204
+  resolution: "@my/package-a@npm:1.0.204"
   dependencies:
-    "@my/log": 1.0.175
+    "@my/log": 1.0.204
     client-only: ^0.0.1
     server-only: ^0.0.1
-  checksum: 75bd333e39776ab1007371abb04d8a7bb623a3fa21566ddc225ae0858ea3a0c81b6d8491ecfdb908d17c6a906e97c92bf001401c9bb381ca9976b8c12d6676b6
+  checksum: 50774883a70f6e721d24f67547710cc7a3e121561bb07a90359048c4c323a25b27d61513897d2e5febf086fbe567c1c2f484a116d1a16cdb1ebafced54187a34
   languageName: node
   linkType: hard
 
-"@my/package-b@npm:1.0.175":
-  version: 1.0.175
-  resolution: "@my/package-b@npm:1.0.175"
+"@my/package-b@npm:1.0.204":
+  version: 1.0.204
+  resolution: "@my/package-b@npm:1.0.204"
   dependencies:
-    "@my/log": 1.0.175
+    "@my/log": 1.0.204
     client-only: ^0.0.1
     server-only: ^0.0.1
-  checksum: d56d0d9d240ca3f0ae789914a99c1fcecd0d1764fc4b05bd9d066974e8e4d718bcf2854d4ba0eb7b858b449b1c419d40fd010a16f2b1bdbad75af2a22e874014
+  checksum: 315018a39266443c519a244184610ef0266d68be02ebc7a091fef5d83e6fd0e4ffdd818f2f90a997ff7790655e1e0e3af81c41cdecec7586b09a415cf4a40782
   languageName: node
   linkType: hard
 
-"@my/package-trans-a@npm:1.0.175":
-  version: 1.0.175
-  resolution: "@my/package-trans-a@npm:1.0.175"
+"@my/package-trans-a@npm:1.0.204":
+  version: 1.0.204
+  resolution: "@my/package-trans-a@npm:1.0.204"
   dependencies:
-    "@my/log": 1.0.175
-    "@my/package-a": 1.0.175
-  checksum: 2d2b5fddf60dabcebae6468ecf658ed0746a0ecdcc2539c85311501cc82e65571641b6317b96c7cdb96006de92ee77b85cd8d07f4e32f0a461fe0dcb478d49cf
+    "@my/log": 1.0.204
+    "@my/package-a": 1.0.204
+  checksum: 0884948aca942564a406cc78882de329d1c3b11c144f2ea525443077ed643174aadf55e5c3dbf27916fb42ddd5d8c27d1388b2f738fccb33ce5851223f57a133
   languageName: node
   linkType: hard
 
-"@my/package-trans-b@npm:1.0.175":
-  version: 1.0.175
-  resolution: "@my/package-trans-b@npm:1.0.175"
+"@my/package-trans-b@npm:1.0.204":
+  version: 1.0.204
+  resolution: "@my/package-trans-b@npm:1.0.204"
   dependencies:
-    "@my/log": 1.0.175
-    "@my/package-b": 1.0.175
-  checksum: 45c5983e1dcfd446466a017eecbf6dfdf32f349806f78585571f2e8fa3b3763bdb522582a07c0a4db0bf27c414335a6bd2ee3c99cd34e2ec3b154785435ec6df
+    "@my/log": 1.0.204
+    "@my/package-b": 1.0.204
+  checksum: d12e115477645b5f52953f8cb586e1760c5bda5d4752366605e054bb8f7244c9375b53ea710940d16d509cbfc0ad26b1090841765f15328afeada60e9944b5a0
   languageName: node
   linkType: hard
 
-"@my/vendor-hook@npm:1.0.175":
-  version: 1.0.175
-  resolution: "@my/vendor-hook@npm:1.0.175"
+"@my/vendor-hook@npm:1.0.204":
+  version: 1.0.204
+  resolution: "@my/vendor-hook@npm:1.0.204"
   dependencies:
-    "@my/log": 1.0.175
+    "@my/log": 1.0.204
     client-only: ^0.0.1
     server-only: ^0.0.1
-  checksum: 91e14da22ace83bee6c3ab3865b62f449fe7fa8a87bc26027be161e1f19952c726d75a43eee75dad1d804ca1c0ebd0cc031fc91737044dcef347171e36a39e28
+  checksum: d2ca6501d926864ac4ef01966906681ae7a141acb66ed1361cf1353e599f568cc62342ecd68d4801a2c0824d78c39509e741b78ef4d3e7e495530f4f423b1c56
   languageName: node
   linkType: hard
 
 "@strategy/vendor-hook@npm:latest":
-  version: 1.0.175
-  resolution: "@strategy/vendor-hook@npm:1.0.175"
+  version: 1.0.204
+  resolution: "@strategy/vendor-hook@npm:1.0.204"
   dependencies:
-    "@my/log": 1.0.175
-    "@my/vendor-hook": 1.0.175
-  checksum: 8ddfa119856a2d6b6d30a1a086498d33c48e7367b0adfbd2470feff71332c30afd600e3c25ff23f2698344944894e0e51b0e4ecdea940be134886bbda1c77f05
+    "@my/log": 1.0.204
+    "@my/vendor-hook": 1.0.204
+  checksum: bd139f4020bc3a055ad816e169ade96a839a8e7f526d60d3ab0ef98c0d06e34e399dbffebb4429db5abd2fbd54dae631e407e5f859e4770956b27a869668d7a6
   languageName: node
   linkType: hard
 
@@ -93,8 +93,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "test-vendor-hook-yarn-3.6.1-transitive@workspace:."
   dependencies:
-    "@my/package-trans-a": 1.0.175
-    "@my/package-trans-b": 1.0.175
+    "@my/package-trans-a": 1.0.204
+    "@my/package-trans-b": 1.0.204
     "@strategy/vendor-hook": latest
   languageName: unknown
   linkType: soft

@@ -6,7 +6,7 @@ const packagesToVendor = new Set(["@my/package-a", "@my/package-b"]);
 async function build(
   projectPath,
   packageName,
-  { globalVersion, outdent, getJSFiles, patchPackageSource }
+  { globalVersion, outdent, getJSFiles, patchPackageSource, cleanDir }
 ) {
   const packagePath = path.join(projectPath, packageName);
 
@@ -311,11 +311,3 @@ async function build(
 }
 
 module.exports = build;
-
-async function cleanDir(path) {
-  try {
-    await fs.rm(path, { recursive: true });
-  } catch (error) {
-    // it may not have existed
-  }
-}

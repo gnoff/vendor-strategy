@@ -1,0 +1,13 @@
+{
+  "name": "test-vendor-deps-bundled-yarn-1.22.19-no-shadow-cond",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "yarn@1.22.19",
+  "dependencies": {
+    "@strategy/vendor-deps-bundled": "latest"
+  }
+}

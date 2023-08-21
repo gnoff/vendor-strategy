@@ -1,0 +1,3 @@
+> corepack npm install --registry=http://localhost:4873
+
+added 5 packages in 143ms

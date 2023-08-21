@@ -1,0 +1,78 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  '@my/package-trans-a':
+    specifier: 1.0.204
+    version: 1.0.204
+  '@my/package-trans-b':
+    specifier: 1.0.204
+    version: 1.0.204
+  '@strategy/vendor-deps-bundled':
+    specifier: latest
+    version: 1.0.204
+
+packages:
+
+  /@my/log@1.0.204:
+    resolution: {integrity: sha512-Uy8ziuTsmmh7jYkBHkLJC0vbZGiByLtW0aeDKZWkF+LJxI2ngYwPMCOrDMFIC0pzwOYPWvA7RhVtDvKY3cWErA==}
+    dev: false
+
+  /@my/package-a@1.0.204:
+    resolution: {integrity: sha512-eplECBF1RK5ikw6scqsmCpcrClWQB5BxS8U0Rw7Lj8yGafVDcJejhvoDjFxZt4ycx6JRgeuRuhcSLfNMzsZslA==}
+    dependencies:
+      '@my/log': 1.0.204
+      client-only: 0.0.1
+      server-only: 0.0.1
+    dev: false
+
+  /@my/package-b@1.0.204:
+    resolution: {integrity: sha512-nKUUhlFrLZHwKhbTBmR84xraJcw3U5/Rn4smmNQ9hM2JnfzQCWTi2ESXhjNROzsYVeJnNzQK9xvIFHa7Ax/fSg==}
+    dependencies:
+      '@my/log': 1.0.204
+      client-only: 0.0.1
+      server-only: 0.0.1
+    dev: false
+
+  /@my/package-trans-a@1.0.204:
+    resolution: {integrity: sha512-rH57sxfNeNd75KJUYh8WSAfa5XxR+G9DKMzuG6rM3Su9luTr5f1dSxkCJtj+/+BSbUvUaEd4tuG5PWyP1djdWQ==}
+    dependencies:
+      '@my/log': 1.0.204
+      '@my/package-a': 1.0.204
+    dev: false
+
+  /@my/package-trans-b@1.0.204:
+    resolution: {integrity: sha512-TTWqDxos1TBayTCXHa5iZVvgPeG5twLTEUjANiM1UK8G/PFHRy0EUNzxEpfK/y6j1nat25LRpwxlzYHltWOfXw==}
+    dependencies:
+      '@my/log': 1.0.204
+      '@my/package-b': 1.0.204
+    dev: false
+
+  /@my/vendor-deps-bundled@1.0.204:
+    resolution: {integrity: sha512-Mqk/tJJF1ff6Z3QWDukdzoQ6xHa1duEdAscPR+Dg+/UZEy3MeBV276TvhhYgRuHwkoOuT8agrN0TMESIaO/Wuw==}
+    dependencies:
+      '@my/log': 1.0.204
+      client-only: 0.0.1
+      server-only: 0.0.1
+    dev: false
+    bundledDependencies:
+      - my-package-a-vendored
+      - my-package-b-vendored
+
+  /@strategy/vendor-deps-bundled@1.0.204:
+    resolution: {integrity: sha512-as32IfiUR6EOUjZvP5pw5uFKwohc3idZPGFjQ4JRPExb5LJ1/TeAmyeTMeBdikOASw5YklxDj1W0ePShR/GQrQ==}
+    dependencies:
+      '@my/log': 1.0.204
+      '@my/vendor-deps-bundled': 1.0.204
+    dev: false
+
+  /client-only@0.0.1:
+    resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+    dev: false
+
+  /server-only@0.0.1:
+    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
+    dev: false

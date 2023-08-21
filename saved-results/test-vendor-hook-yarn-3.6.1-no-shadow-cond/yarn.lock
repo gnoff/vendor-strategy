@@ -5,31 +5,31 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@my/log@npm:1.0.175":
-  version: 1.0.175
-  resolution: "@my/log@npm:1.0.175"
-  checksum: b08bb267d002beb03cbdecd6fcb0623fcb94040f357a45ed2ff07556f953b023be11c4b8cc1465b47c2d511dc8bc797ec51e484b9b9eabc4ea8baf36c4e344e1
+"@my/log@npm:1.0.204":
+  version: 1.0.204
+  resolution: "@my/log@npm:1.0.204"
+  checksum: abcd8095b3ad6046dc17f2a64c41fd6fba527aa35903498b771811d72fc2019c109bb9bac0566e8a7060c0b90400f605965bde77fe9c7b8dda27235815c193a4
   languageName: node
   linkType: hard
 
-"@my/vendor-hook@npm:1.0.175":
-  version: 1.0.175
-  resolution: "@my/vendor-hook@npm:1.0.175"
+"@my/vendor-hook@npm:1.0.204":
+  version: 1.0.204
+  resolution: "@my/vendor-hook@npm:1.0.204"
   dependencies:
-    "@my/log": 1.0.175
+    "@my/log": 1.0.204
     client-only: ^0.0.1
     server-only: ^0.0.1
-  checksum: 91e14da22ace83bee6c3ab3865b62f449fe7fa8a87bc26027be161e1f19952c726d75a43eee75dad1d804ca1c0ebd0cc031fc91737044dcef347171e36a39e28
+  checksum: d2ca6501d926864ac4ef01966906681ae7a141acb66ed1361cf1353e599f568cc62342ecd68d4801a2c0824d78c39509e741b78ef4d3e7e495530f4f423b1c56
   languageName: node
   linkType: hard
 
 "@strategy/vendor-hook@npm:latest":
-  version: 1.0.175
-  resolution: "@strategy/vendor-hook@npm:1.0.175"
+  version: 1.0.204
+  resolution: "@strategy/vendor-hook@npm:1.0.204"
   dependencies:
-    "@my/log": 1.0.175
-    "@my/vendor-hook": 1.0.175
-  checksum: 8ddfa119856a2d6b6d30a1a086498d33c48e7367b0adfbd2470feff71332c30afd600e3c25ff23f2698344944894e0e51b0e4ecdea940be134886bbda1c77f05
+    "@my/log": 1.0.204
+    "@my/vendor-hook": 1.0.204
+  checksum: bd139f4020bc3a055ad816e169ade96a839a8e7f526d60d3ab0ef98c0d06e34e399dbffebb4429db5abd2fbd54dae631e407e5f859e4770956b27a869668d7a6
   languageName: node
   linkType: hard
 

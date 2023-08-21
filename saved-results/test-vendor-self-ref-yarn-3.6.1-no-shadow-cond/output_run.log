@@ -1,0 +1,28 @@
+> corepack yarn node -C cond index.js
+@strategy/vendor-self-ref::: running index.js
+@strategy/vendor-self-ref::: requiring @my/vendor-self-ref
+@my/vendor-self-ref::: running index.js
+@my/vendor-self-ref::: about to install require-hook
+[VENDORED] @my/vendor-self-ref::: running exports/@my/package-a
+/Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-yarn-3.6.1-no-shadow-cond/.pnp.cjs:8914
+    throw firstError;
+    ^
+
+Error: @my/vendor-self-ref tried to access my-package-a-vendored, but it isn't declared in its dependencies; this makes the require call ambiguous and unsound.
+
+Required package: my-package-a-vendored
+Required by: @my/vendor-self-ref@npm:1.0.204 (via /Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-yarn-3.6.1-no-shadow-cond/.yarn/cache/@my-vendor-self-ref-npm-1.0.204-2064233ba3-c57044c94e.zip/node_modules/@my/vendor-self-ref/vendored/@my/package-a/)
+
+Require stack:
+- /Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-yarn-3.6.1-no-shadow-cond/.yarn/cache/@my-vendor-self-ref-npm-1.0.204-2064233ba3-c57044c94e.zip/node_modules/@my/vendor-self-ref/vendored/@my/package-a/___exports.js
+- /Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-yarn-3.6.1-no-shadow-cond/.yarn/cache/@my-vendor-self-ref-npm-1.0.204-2064233ba3-c57044c94e.zip/node_modules/@my/vendor-self-ref/vendored/@my/package-a/___exports.js
+    at Function.require$$0.Module._resolveFilename (/Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-yarn-3.6.1-no-shadow-cond/.pnp.cjs:8913:13)
+    at Function.resolve (node:internal/modules/cjs/helpers:114:19)
+    at Object.<anonymous> (/Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-yarn-3.6.1-no-shadow-cond/.yarn/cache/@my-vendor-self-ref-npm-1.0.204-2064233ba3-c57044c94e.zip/node_modules/@my/vendor-self-ref/vendored/@my/package-a/___exports.js:7:16)
+    at Module._compile (node:internal/modules/cjs/loader:1191:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1245:10)
+    at Object.require$$0.Module._extensions..js (/Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-yarn-3.6.1-no-shadow-cond/.pnp.cjs:8957:33)
+    at Module.load (node:internal/modules/cjs/loader:1069:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:904:12)
+    at Function.require$$0.Module._load (/Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-yarn-3.6.1-no-shadow-cond/.pnp.cjs:8802:31)
+    at Module.require (node:internal/modules/cjs/loader:1093:19)

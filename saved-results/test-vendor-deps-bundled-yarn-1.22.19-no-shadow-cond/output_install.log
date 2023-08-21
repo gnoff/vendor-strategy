@@ -1,0 +1,13 @@
+> corepack yarn install
+yarn install v1.22.19
+info No lockfile found.
+[1/4] Resolving packages...
+error Package "my-package-a-vendored" refers to a non-existing file '"/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-bundled-yarn-1.22.19-no-shadow-cond/vendored/@my/package-a"'.
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+Error: Package "my-package-b-vendored" refers to a non-existing file '"/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-bundled-yarn-1.22.19-no-shadow-cond/vendored/@my/package-b"'.
+    at MessageError.ExtendableBuiltin (/Users/joshstory/.cache/node/corepack/yarn/1.22.19/lib/cli.js:721:66)
+    at new MessageError (/Users/joshstory/.cache/node/corepack/yarn/1.22.19/lib/cli.js:750:123)
+    at FileResolver.<anonymous> (/Users/joshstory/.cache/node/corepack/yarn/1.22.19/lib/cli.js:50035:15)
+    at Generator.next (<anonymous>)
+    at step (/Users/joshstory/.cache/node/corepack/yarn/1.22.19/lib/cli.js:310:30)
+    at /Users/joshstory/.cache/node/corepack/yarn/1.22.19/lib/cli.js:321:13

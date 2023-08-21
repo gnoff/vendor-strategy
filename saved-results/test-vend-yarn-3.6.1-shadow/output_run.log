@@ -13,31 +13,31 @@ alias Map(2) {
 test/no-shadow::: running index.js
 test/no-shadow::: requiring @my/package-a
 resolving @my/vend-exports/vendored/@my/package-a
-resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-exports-npm-1.0.175-91bf23abef-96488b6121.zip/node_modules/@my/vend-exports/vendored/@my/package-a/index.js
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-exports-npm-1.0.204-1b43db42bc-2f8fb19712.zip/node_modules/@my/vend-exports/vendored/@my/package-a/index.js
 [VENDORED] @my/package-a::: running @my/package-a
 test/no-shadow::: requiring @my/package-b
 resolving @my/vend-paths/vendored/@my/package-b
-resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-paths-npm-1.0.175-6f54fc9a9a-e2901244cf.zip/node_modules/@my/vend-paths/vendored/@my/package-b/index.js
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-paths-npm-1.0.204-049d05eb94-eca6e87851.zip/node_modules/@my/vend-paths/vendored/@my/package-b/index.js
 [VENDORED] @my/package-b::: running @my/package-b
 test/no-shadow::: requiring @my/package-a/foo
 resolving @my/vend-exports/vendored/@my/package-a/foo
-resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-exports-npm-1.0.175-91bf23abef-96488b6121.zip/node_modules/@my/vend-exports/vendored/@my/package-a/foo.js
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-exports-npm-1.0.204-1b43db42bc-2f8fb19712.zip/node_modules/@my/vend-exports/vendored/@my/package-a/foo.js
 [VENDORED] @my/package-a::: running @my/package-a/foo
 test/no-shadow::: requiring @my/package-b/foo
 resolving @my/vend-paths/vendored/@my/package-b/foo
-resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-paths-npm-1.0.175-6f54fc9a9a-e2901244cf.zip/node_modules/@my/vend-paths/vendored/@my/package-b/foo.js
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-paths-npm-1.0.204-049d05eb94-eca6e87851.zip/node_modules/@my/vend-paths/vendored/@my/package-b/foo.js
 [VENDORED] @my/package-b::: running @my/package-b/foo
 test/no-shadow::: requiring @my/package-a/bar
 resolving @my/vend-exports/vendored/@my/package-a/bar
-resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-exports-npm-1.0.175-91bf23abef-96488b6121.zip/node_modules/@my/vend-exports/vendored/@my/package-a/bar.js
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-exports-npm-1.0.204-1b43db42bc-2f8fb19712.zip/node_modules/@my/vend-exports/vendored/@my/package-a/bar.js
 [VENDORED] @my/package-a::: running @my/package-a/bar
 resolving @my/vend-paths/vendored/@my/package-b/bar
-resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-paths-npm-1.0.175-6f54fc9a9a-e2901244cf.zip/node_modules/@my/vend-paths/vendored/@my/package-b/bar.js
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-paths-npm-1.0.204-049d05eb94-eca6e87851.zip/node_modules/@my/vend-paths/vendored/@my/package-b/bar.js
 [VENDORED] @my/package-b::: running @my/package-b/bar
 resolving @my/vend-exports/vendored/@my/package-a/bar
-resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-exports-npm-1.0.175-91bf23abef-96488b6121.zip/node_modules/@my/vend-exports/vendored/@my/package-a/bar.js
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-exports-npm-1.0.204-1b43db42bc-2f8fb19712.zip/node_modules/@my/vend-exports/vendored/@my/package-a/bar.js
 [VENDORED] @my/package-b::: other a-bar
 [VENDORED] @my/package-a::: other b-bar
 test/no-shadow::: requiring @my/package-b/bar
 resolving @my/vend-paths/vendored/@my/package-b/bar
-resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-paths-npm-1.0.175-6f54fc9a9a-e2901244cf.zip/node_modules/@my/vend-paths/vendored/@my/package-b/bar.js
+resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-3.6.1-shadow/.yarn/cache/@my-vend-paths-npm-1.0.204-049d05eb94-eca6e87851.zip/node_modules/@my/vend-paths/vendored/@my/package-b/bar.js

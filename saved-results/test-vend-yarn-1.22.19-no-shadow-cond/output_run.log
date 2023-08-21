@@ -42,4 +42,4 @@ resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-1.22.1
 test/no-shadow::: requiring @my/package-b/bar
 resolving @my/vend-paths/vendored/@my/package-b/bar
 resolved /Users/joshstory/projects/vendor-strategy/results/test-vend-yarn-1.22.19-no-shadow-cond/node_modules/@my/vend-paths/vendored/@my/package-b/bar.js
-Done in 0.06s.
+Done in 0.09s.

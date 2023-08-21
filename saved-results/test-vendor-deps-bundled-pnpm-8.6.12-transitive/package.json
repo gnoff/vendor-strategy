@@ -1,0 +1,15 @@
+{
+  "name": "test-vendor-deps-bundled-pnpm-8.6.12-transitive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@8.6.12",
+  "dependencies": {
+    "@my/package-trans-a": "1.0.204",
+    "@my/package-trans-b": "1.0.204",
+    "@strategy/vendor-deps-bundled": "latest"
+  }
+}

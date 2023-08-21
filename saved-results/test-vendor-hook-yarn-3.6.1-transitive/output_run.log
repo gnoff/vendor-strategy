@@ -11,13 +11,13 @@
 Error: @my/vendor-hook tried to access my-package-a-vendored, but it isn't declared in its dependencies; this makes the require call ambiguous and unsound.
 
 Required package: my-package-a-vendored
-Required by: @my/vendor-hook@npm:1.0.175 (via /Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-3.6.1-transitive/.yarn/cache/@my-vendor-hook-npm-1.0.175-bfff7db008-91e14da22a.zip/node_modules/@my/vendor-hook/vendored/@my/package-a/)
+Required by: @my/vendor-hook@npm:1.0.204 (via /Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-3.6.1-transitive/.yarn/cache/@my-vendor-hook-npm-1.0.204-0a88c5fda4-d2ca6501d9.zip/node_modules/@my/vendor-hook/vendored/@my/package-a/)
 
 Require stack:
-- /Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-3.6.1-transitive/.yarn/cache/@my-vendor-hook-npm-1.0.175-bfff7db008-91e14da22a.zip/node_modules/@my/vendor-hook/vendored/@my/package-a/package.json
+- /Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-3.6.1-transitive/.yarn/cache/@my-vendor-hook-npm-1.0.204-0a88c5fda4-d2ca6501d9.zip/node_modules/@my/vendor-hook/vendored/@my/package-a/package.json
     at Function.require$$0.Module._resolveFilename (/Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-3.6.1-transitive/.pnp.cjs:8963:13)
     at Function.resolve (node:internal/modules/cjs/helpers:114:19)
-    at Object.<anonymous> (/Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-3.6.1-transitive/.yarn/cache/@my-vendor-hook-npm-1.0.175-bfff7db008-91e14da22a.zip/node_modules/@my/vendor-hook/exports/@my/package-a/index.js:12:23)
+    at Object.<anonymous> (/Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-3.6.1-transitive/.yarn/cache/@my-vendor-hook-npm-1.0.204-0a88c5fda4-d2ca6501d9.zip/node_modules/@my/vendor-hook/exports/@my/package-a/index.js:12:23)
     at Module._compile (node:internal/modules/cjs/loader:1191:14)
     at Object.Module._extensions..js (node:internal/modules/cjs/loader:1245:10)
     at Object.require$$0.Module._extensions..js (/Users/joshstory/projects/vendor-strategy/results/test-vendor-hook-yarn-3.6.1-transitive/.pnp.cjs:9007:33)

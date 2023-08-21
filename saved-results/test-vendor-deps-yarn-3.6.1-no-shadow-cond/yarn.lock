@@ -5,33 +5,33 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@my/log@npm:1.0.175":
-  version: 1.0.175
-  resolution: "@my/log@npm:1.0.175"
-  checksum: b08bb267d002beb03cbdecd6fcb0623fcb94040f357a45ed2ff07556f953b023be11c4b8cc1465b47c2d511dc8bc797ec51e484b9b9eabc4ea8baf36c4e344e1
+"@my/log@npm:1.0.204":
+  version: 1.0.204
+  resolution: "@my/log@npm:1.0.204"
+  checksum: abcd8095b3ad6046dc17f2a64c41fd6fba527aa35903498b771811d72fc2019c109bb9bac0566e8a7060c0b90400f605965bde77fe9c7b8dda27235815c193a4
   languageName: node
   linkType: hard
 
-"@my/vendor-deps@npm:1.0.175":
-  version: 1.0.175
-  resolution: "@my/vendor-deps@npm:1.0.175"
+"@my/vendor-deps@npm:1.0.204":
+  version: 1.0.204
+  resolution: "@my/vendor-deps@npm:1.0.204"
   dependencies:
-    "@my/log": 1.0.175
+    "@my/log": 1.0.204
     client-only: ^0.0.1
     my-package-a-vendored: "file:vendored/@my/package-a"
     my-package-b-vendored: "file:vendored/@my/package-b"
     server-only: ^0.0.1
-  checksum: aef4ab2e79ae68d6cc59b39543ad304334f28c4f01a016fe97a58b5df0de9f3e74e6f4ebbe56d3e3e49d73ab484c0740eda48d97b0aa47b800498121090945be
+  checksum: 93b8338a10a5ddde6a90dddca37d6a1455b324959ac1ca11d87ff4f8e585d5e730af3c42464129c97ad344a3d5771b2ac7cc1afc8a0b47648d9fb734e7806c96
   languageName: node
   linkType: hard
 
 "@strategy/vendor-deps@npm:latest":
-  version: 1.0.175
-  resolution: "@strategy/vendor-deps@npm:1.0.175"
+  version: 1.0.204
+  resolution: "@strategy/vendor-deps@npm:1.0.204"
   dependencies:
-    "@my/log": 1.0.175
-    "@my/vendor-deps": 1.0.175
-  checksum: d92a66f70db0aa6e190b2257e1f219d40802c7083395ae80a7022e6868e07c4f1c299957774939e1ad8c6803cc0ba674ccc7b2875b0ec83d23d34a4fcce09874
+    "@my/log": 1.0.204
+    "@my/vendor-deps": 1.0.204
+  checksum: 62c6e0932514d0bc87c97610601b16cd28a1abd3bc73cab110f805075156799f80d050d49c8da6a7f88120f083ff5a7285d88ef7611fe152b23695edf0304edb
   languageName: node
   linkType: hard
 
@@ -42,25 +42,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"my-package-a-vendored@file:vendored/@my/package-a::locator=%40my%2Fvendor-deps%40npm%3A1.0.175":
-  version: 1.0.175
-  resolution: "my-package-a-vendored@file:vendored/@my/package-a#vendored/@my/package-a::hash=231da3&locator=%40my%2Fvendor-deps%40npm%3A1.0.175"
+"my-package-a-vendored@file:vendored/@my/package-a::locator=%40my%2Fvendor-deps%40npm%3A1.0.204":
+  version: 1.0.204
+  resolution: "my-package-a-vendored@file:vendored/@my/package-a#vendored/@my/package-a::hash=253a6b&locator=%40my%2Fvendor-deps%40npm%3A1.0.204"
   dependencies:
-    "@my/log": 1.0.175
+    "@my/log": 1.0.204
     client-only: ^0.0.1
     server-only: ^0.0.1
-  checksum: 682d0025f7e3082ddbad4f458a2c0dba92c0d2773ff3903da0216d396e0207dc2125e7df07dca25ff630e31830621c8a8da400f8f56c759c2d3cd28195fcab0b
+  checksum: 5c96b3149d4919e336906816b52e35d3c376b12af857b3f817ba072ab43ac8385a6f01c240db6b3a0802647957c769db68b39da1c36f984235f44b6d5ddf5068
   languageName: node
   linkType: hard
 
-"my-package-b-vendored@file:vendored/@my/package-b::locator=%40my%2Fvendor-deps%40npm%3A1.0.175":
-  version: 1.0.175
-  resolution: "my-package-b-vendored@file:vendored/@my/package-b#vendored/@my/package-b::hash=f3fc26&locator=%40my%2Fvendor-deps%40npm%3A1.0.175"
+"my-package-b-vendored@file:vendored/@my/package-b::locator=%40my%2Fvendor-deps%40npm%3A1.0.204":
+  version: 1.0.204
+  resolution: "my-package-b-vendored@file:vendored/@my/package-b#vendored/@my/package-b::hash=2343b8&locator=%40my%2Fvendor-deps%40npm%3A1.0.204"
   dependencies:
-    "@my/log": 1.0.175
+    "@my/log": 1.0.204
     client-only: ^0.0.1
     server-only: ^0.0.1
-  checksum: c3f58c1e2ebc7f644f59e4e8e38eebd022184efc528d28b2fc6a299640f94ecbb0bfc5d7361303a7f86cbd155a5b3ed4a65b25919f17447bc321c1539ecb48e6
+  checksum: 99c94657bafe2eee931e8c4fabc2f325a31f2ae9c4c4d052416c4b4c7b87bf7f38ecbd079dbb7716ee1e2482747c302c7e5a52ea60b89861979883a79f1cbd76
   languageName: node
   linkType: hard
 

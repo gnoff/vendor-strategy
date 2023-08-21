@@ -8,8 +8,8 @@
   "license": "ISC",
   "packageManager": "yarn@3.6.1",
   "dependencies": {
-    "@my/package-a": "1.0.175",
-    "@my/package-b": "1.0.175",
+    "@my/package-a": "1.0.204",
+    "@my/package-b": "1.0.204",
     "@strategy/vend": "latest"
   }
 }

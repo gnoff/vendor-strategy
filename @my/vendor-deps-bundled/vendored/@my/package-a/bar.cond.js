@@ -1,0 +1,9 @@
+const makeLog = require("@my/log");
+const log = makeLog("[VENDORED] @my/package-a::: ");
+
+log('running @my/package-a/bar with condition "cond"');
+
+module.exports = "a-bar cond";
+
+const other = require("@my/package-b/bar");
+log("other", other);

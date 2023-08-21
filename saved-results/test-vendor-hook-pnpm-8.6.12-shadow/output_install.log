@@ -8,8 +8,8 @@ Packages are hard linked from the content-addressable store to the virtual store
 Progress: resolved 7, reused 7, downloaded 0, added 7, done
 
 dependencies:
-+ @my/package-a 1.0.175
-+ @my/package-b 1.0.175
-+ @strategy/vendor-hook 1.0.175
++ @my/package-a 1.0.204
++ @my/package-b 1.0.204
++ @strategy/vendor-hook 1.0.204
 
-Done in 233ms
+Done in 251ms

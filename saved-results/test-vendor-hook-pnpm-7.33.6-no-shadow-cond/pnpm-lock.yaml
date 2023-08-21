@@ -4,27 +4,27 @@ specifiers:
   '@strategy/vendor-hook': latest
 
 dependencies:
-  '@strategy/vendor-hook': 1.0.175
+  '@strategy/vendor-hook': 1.0.204
 
 packages:
 
-  /@my/log/1.0.175:
-    resolution: {integrity: sha512-HtqI43Im3Nu/o1vThBuO9m4OvKMXZZYjwEtOi4dzftWuKnVGpe+i+joE2Q+X6sf5+chGZbFmj4r2QUSqifNM3w==}
+  /@my/log/1.0.204:
+    resolution: {integrity: sha512-Uy8ziuTsmmh7jYkBHkLJC0vbZGiByLtW0aeDKZWkF+LJxI2ngYwPMCOrDMFIC0pzwOYPWvA7RhVtDvKY3cWErA==}
     dev: false
 
-  /@my/vendor-hook/1.0.175:
-    resolution: {integrity: sha512-V7FfU0d51Vk6SNR0Av+4Fs8jwBkqj/Qh5CTTOFu7X0HJqW/fPf5sXSEKUrpyzDDIXxkKSFW6LcaKnpNjNiidLg==}
+  /@my/vendor-hook/1.0.204:
+    resolution: {integrity: sha512-TOkyanndfaRp6xzrYs1Mr36VOBqtot+EiATOBYA4ANFlx1KTdq/7z0hv5sFlJAhLS5Yg5g/M+vj8ldcwJejg4w==}
     dependencies:
-      '@my/log': 1.0.175
+      '@my/log': 1.0.204
       client-only: 0.0.1
       server-only: 0.0.1
     dev: false
 
-  /@strategy/vendor-hook/1.0.175:
-    resolution: {integrity: sha512-vDe/Zr+QEN5tEpKOCN7nS5kYgEK2dG0JSeHmL0JfNx6P3ulGLNv7oHFj/oPkPm4ePXGL/Z86wUv3Bd5ylrkbmg==}
+  /@strategy/vendor-hook/1.0.204:
+    resolution: {integrity: sha512-ur+NCxj+SsC+psY8YgwGKTM1UJtXACT/SgXNeCRWHL7vjERRB8z+ZQehr0B81AMAXDnz/7UtbGpI1jq07fA4ng==}
     dependencies:
-      '@my/log': 1.0.175
-      '@my/vendor-hook': 1.0.175
+      '@my/log': 1.0.204
+      '@my/vendor-hook': 1.0.204
     dev: false
 
   /client-only/0.0.1:

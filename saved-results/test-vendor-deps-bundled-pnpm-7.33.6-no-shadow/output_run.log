@@ -1,0 +1,27 @@
+> node index.js
+@strategy/vendor-deps-bundled::: running index.js
+@strategy/vendor-deps-bundled::: requiring @my/vendor-deps-bundled
+@my/vendor-deps-bundled::: running index.js
+@my/vendor-deps-bundled::: about to install require-hook
+@my/vendor-deps-bundled::: running exports/@my/package-a
+@my/vendor-deps-bundled::: module.exports {
+  '.': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-bundled-pnpm-7.33.6-no-shadow/node_modules/.pnpm/@my+vendor-deps-bundled@1.0.204/node_modules/@my/vendor-deps-bundled/vendored/@my/package-a/index.js',
+  './foo': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-bundled-pnpm-7.33.6-no-shadow/node_modules/.pnpm/@my+vendor-deps-bundled@1.0.204/node_modules/@my/vendor-deps-bundled/vendored/@my/package-a/foo.js',
+  './bar': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-bundled-pnpm-7.33.6-no-shadow/node_modules/.pnpm/@my+vendor-deps-bundled@1.0.204/node_modules/@my/vendor-deps-bundled/vendored/@my/package-a/bar.js'
+}
+@my/vendor-deps-bundled::: installing require hook for vendored packages
+test/no-shadow::: running index.js
+test/no-shadow::: requiring @my/package-a (not a dep of this project)
+[VENDORED] @my/package-a::: running @my/package-a
+test/no-shadow::: requiring @my/package-b (not a dep of this project)
+[VENDORED] @my/package-b::: running @my/package-b
+test/no-shadow::: requiring @my/package-a/foo (not a dep of this project)
+[VENDORED] @my/package-a::: running @my/package-a/foo
+test/no-shadow::: requiring @my/package-b/foo (not a dep of this project)
+[VENDORED] @my/package-b::: running @my/package-b/foo
+test/no-shadow::: requiring @my/package-a/bar
+[VENDORED] @my/package-a::: running @my/package-a/bar
+[VENDORED] @my/package-b::: running @my/package-b/bar
+[VENDORED] @my/package-b::: other a-bar
+[VENDORED] @my/package-a::: other b-bar
+test/no-shadow::: requiring @my/package-b/bar

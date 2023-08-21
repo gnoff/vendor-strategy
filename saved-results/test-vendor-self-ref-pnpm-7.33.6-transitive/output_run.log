@@ -1,0 +1,31 @@
+> node index.js
+@strategy/vendor-self-ref::: running index.js
+@strategy/vendor-self-ref::: requiring @my/vendor-self-ref
+@my/vendor-self-ref::: running index.js
+@my/vendor-self-ref::: about to install require-hook
+[VENDORED] @my/vendor-self-ref::: running exports/@my/package-a
+[VENDORED] @my/vendor-self-ref::: module.exports {
+  '.': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-pnpm-7.33.6-transitive/node_modules/.pnpm/@my+vendor-self-ref@1.0.204/node_modules/@my/vendor-self-ref/vendored/@my/package-a/index.js',
+  './foo': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-pnpm-7.33.6-transitive/node_modules/.pnpm/@my+vendor-self-ref@1.0.204/node_modules/@my/vendor-self-ref/vendored/@my/package-a/foo.js',
+  './bar': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-self-ref-pnpm-7.33.6-transitive/node_modules/.pnpm/@my+vendor-self-ref@1.0.204/node_modules/@my/vendor-self-ref/vendored/@my/package-a/bar.js'
+}
+@my/vendor-self-ref::: installing require hook for vendored packages
+test/transitive::: running index.js
+test/transitive::: acquiring package-a transitive getter
+@my/package-trans-a::: running @my/package-trans-a
+test/transitive::: acquiring package-b transitive getter
+@my/package-trans-b::: running @my/package-trans-b
+test/transitive::: requiring @my/package-a
+[VENDORED] @my/package-a::: running @my/package-a
+test/transitive::: requiring @my/package-b
+[VENDORED] @my/package-b::: running @my/package-b
+test/transitive::: requiring @my/package-a/foo
+[VENDORED] @my/package-a::: running @my/package-a/foo
+test/transitive::: requiring @my/package-b/foo
+[VENDORED] @my/package-b::: running @my/package-b/foo
+test/transitive::: requiring @my/package-a/bar
+[VENDORED] @my/package-a::: running @my/package-a/bar
+[VENDORED] @my/package-b::: running @my/package-b/bar
+[VENDORED] @my/package-b::: other a-bar
+[VENDORED] @my/package-a::: other b-bar
+test/transitive::: requiring @my/package-b/bar

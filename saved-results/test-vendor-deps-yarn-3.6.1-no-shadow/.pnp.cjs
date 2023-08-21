@@ -28,41 +28,41 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
-            ["@strategy/vendor-deps", "npm:1.0.175"]\
+            ["@strategy/vendor-deps", "npm:1.0.204"]\
           ],\
           "linkType": "SOFT"\
         }]\
       ]],\
       ["@my/log", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-log-npm-1.0.175-3b52596d92-b08bb267d0.zip/node_modules/@my/log/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-log-npm-1.0.204-771830157b-abcd8095b3.zip/node_modules/@my/log/",\
           "packageDependencies": [\
-            ["@my/log", "npm:1.0.175"]\
+            ["@my/log", "npm:1.0.204"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@my/vendor-deps", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@my-vendor-deps-npm-1.0.175-8ae29d8735-aef4ab2e79.zip/node_modules/@my/vendor-deps/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@my-vendor-deps-npm-1.0.204-1e5c7c9cb6-93b8338a10.zip/node_modules/@my/vendor-deps/",\
           "packageDependencies": [\
-            ["@my/vendor-deps", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
+            ["@my/vendor-deps", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
             ["client-only", "npm:0.0.1"],\
-            ["my-package-a-vendored", "file:vendored/@my/package-a#vendored/@my/package-a::hash=231da3&locator=%40my%2Fvendor-deps%40npm%3A1.0.175"],\
-            ["my-package-b-vendored", "file:vendored/@my/package-b#vendored/@my/package-b::hash=f3fc26&locator=%40my%2Fvendor-deps%40npm%3A1.0.175"],\
+            ["my-package-a-vendored", "file:vendored/@my/package-a#vendored/@my/package-a::hash=253a6b&locator=%40my%2Fvendor-deps%40npm%3A1.0.204"],\
+            ["my-package-b-vendored", "file:vendored/@my/package-b#vendored/@my/package-b::hash=2343b8&locator=%40my%2Fvendor-deps%40npm%3A1.0.204"],\
             ["server-only", "npm:0.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@strategy/vendor-deps", [\
-        ["npm:1.0.175", {\
-          "packageLocation": "./.yarn/cache/@strategy-vendor-deps-npm-1.0.175-9cab143898-d92a66f70d.zip/node_modules/@strategy/vendor-deps/",\
+        ["npm:1.0.204", {\
+          "packageLocation": "./.yarn/cache/@strategy-vendor-deps-npm-1.0.204-25afa0b9cc-62c6e09325.zip/node_modules/@strategy/vendor-deps/",\
           "packageDependencies": [\
-            ["@strategy/vendor-deps", "npm:1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
-            ["@my/vendor-deps", "npm:1.0.175"]\
+            ["@strategy/vendor-deps", "npm:1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
+            ["@my/vendor-deps", "npm:1.0.204"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -77,11 +77,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["my-package-a-vendored", [\
-        ["file:vendored/@my/package-a#vendored/@my/package-a::hash=231da3&locator=%40my%2Fvendor-deps%40npm%3A1.0.175", {\
-          "packageLocation": "./.yarn/cache/my-package-a-vendored-file-18d7283ad0-682d0025f7.zip/node_modules/my-package-a-vendored/",\
+        ["file:vendored/@my/package-a#vendored/@my/package-a::hash=253a6b&locator=%40my%2Fvendor-deps%40npm%3A1.0.204", {\
+          "packageLocation": "./.yarn/cache/my-package-a-vendored-file-81484d63f9-5c96b3149d.zip/node_modules/my-package-a-vendored/",\
           "packageDependencies": [\
-            ["my-package-a-vendored", "file:vendored/@my/package-a#vendored/@my/package-a::hash=231da3&locator=%40my%2Fvendor-deps%40npm%3A1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
+            ["my-package-a-vendored", "file:vendored/@my/package-a#vendored/@my/package-a::hash=253a6b&locator=%40my%2Fvendor-deps%40npm%3A1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
             ["client-only", "npm:0.0.1"],\
             ["server-only", "npm:0.0.1"]\
           ],\
@@ -89,11 +89,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["my-package-b-vendored", [\
-        ["file:vendored/@my/package-b#vendored/@my/package-b::hash=f3fc26&locator=%40my%2Fvendor-deps%40npm%3A1.0.175", {\
-          "packageLocation": "./.yarn/cache/my-package-b-vendored-file-4e88448214-c3f58c1e2e.zip/node_modules/my-package-b-vendored/",\
+        ["file:vendored/@my/package-b#vendored/@my/package-b::hash=2343b8&locator=%40my%2Fvendor-deps%40npm%3A1.0.204", {\
+          "packageLocation": "./.yarn/cache/my-package-b-vendored-file-86050e85da-99c94657ba.zip/node_modules/my-package-b-vendored/",\
           "packageDependencies": [\
-            ["my-package-b-vendored", "file:vendored/@my/package-b#vendored/@my/package-b::hash=f3fc26&locator=%40my%2Fvendor-deps%40npm%3A1.0.175"],\
-            ["@my/log", "npm:1.0.175"],\
+            ["my-package-b-vendored", "file:vendored/@my/package-b#vendored/@my/package-b::hash=2343b8&locator=%40my%2Fvendor-deps%40npm%3A1.0.204"],\
+            ["@my/log", "npm:1.0.204"],\
             ["client-only", "npm:0.0.1"],\
             ["server-only", "npm:0.0.1"]\
           ],\
@@ -114,7 +114,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["test-vendor-deps-yarn-3.6.1-no-shadow", "workspace:."],\
-            ["@strategy/vendor-deps", "npm:1.0.175"]\
+            ["@strategy/vendor-deps", "npm:1.0.204"]\
           ],\
           "linkType": "SOFT"\
         }]\

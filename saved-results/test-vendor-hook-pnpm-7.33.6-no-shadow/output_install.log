@@ -7,7 +7,7 @@ Packages are hard linked from the content-addressable store to the virtual store
   Virtual store is at:             node_modules/.pnpm
 
 dependencies:
-+ @strategy/vendor-hook 1.0.175
++ @strategy/vendor-hook 1.0.204
 
-Done in 254ms
+Done in 309ms
 Progress: resolved 5, reused 3, downloaded 2, added 5, done

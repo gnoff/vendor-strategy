@@ -1,15 +1,6 @@
 > corepack pnpm up && corepack pnpm install --registry=http://localhost:4873
 Progress: resolved 1, reused 0, downloaded 0, added 0
-Packages: +7
-+++++++
-Packages are hard linked from the content-addressable store to the virtual store.
-  Content-addressable store is at: /Users/joshstory/Library/pnpm/store/v3
-  Virtual store is at:             node_modules/.pnpm
+ ERR_PNPM_LINKED_PKG_DIR_NOT_FOUND  Could not install from "/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-pnpm-7.33.6-shadow/vendored/@my/package-a" as it does not exist.
 
-dependencies:
-+ @my/package-a 1.0.175
-+ @my/package-b 1.0.175
-+ @strategy/vendor-deps 1.0.175
-
-Done in 243ms
-Progress: resolved 7, reused 7, downloaded 0, added 7, done
+This error happened while installing the dependencies of @strategy/vendor-deps@1.0.204
+ at @my/vendor-deps@1.0.204

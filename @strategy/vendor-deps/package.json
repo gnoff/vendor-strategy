@@ -1,6 +1,6 @@
 {
   "name": "@strategy/vendor-deps",
-  "version": "1.0.175",
+  "version": "1.0.204",
   "description": "",
   "main": "index.js",
   "files": [
@@ -16,7 +16,7 @@
     "registry": "http://localhost:4873"
   },
   "dependencies": {
-    "@my/log": "1.0.175",
-    "@my/vendor-deps": "1.0.175"
+    "@my/log": "1.0.204",
+    "@my/vendor-deps": "1.0.204"
   }
 }

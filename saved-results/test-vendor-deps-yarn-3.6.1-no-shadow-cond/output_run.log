@@ -5,59 +5,23 @@
 @my/vendor-deps::: about to install require-hook
 @my/vendor-deps::: running exports/@my/package-a
 @my/vendor-deps::: module.exports {
-  '.': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-yarn-3.6.1-no-shadow-cond/.yarn/cache/my-package-a-vendored-file-18d7283ad0-682d0025f7.zip/node_modules/my-package-a-vendored/index.cond.js',
-  './foo': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-yarn-3.6.1-no-shadow-cond/.yarn/cache/my-package-a-vendored-file-18d7283ad0-682d0025f7.zip/node_modules/my-package-a-vendored/foo.cond.js',
-  './bar': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-yarn-3.6.1-no-shadow-cond/.yarn/cache/my-package-a-vendored-file-18d7283ad0-682d0025f7.zip/node_modules/my-package-a-vendored/bar.cond.js'
+  '.': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-yarn-3.6.1-no-shadow-cond/.yarn/cache/my-package-a-vendored-file-81484d63f9-5c96b3149d.zip/node_modules/my-package-a-vendored/index.cond.js',
+  './foo': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-yarn-3.6.1-no-shadow-cond/.yarn/cache/my-package-a-vendored-file-81484d63f9-5c96b3149d.zip/node_modules/my-package-a-vendored/foo.cond.js',
+  './bar': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-yarn-3.6.1-no-shadow-cond/.yarn/cache/my-package-a-vendored-file-81484d63f9-5c96b3149d.zip/node_modules/my-package-a-vendored/bar.cond.js'
 }
 @my/vendor-deps::: installing require hook for vendored packages
 test/no-shadow::: running index.js
 test/no-shadow::: requiring @my/package-a (not a dep of this project)
-deeper -> 1
-shallower <- 0
-deeper -> 1
-shallower <- 0
-deeper -> 1
-shallower <- 0
 [VENDORED] @my/package-a::: running @my/package-a with condition "cond"
-deeper -> 1
-shallower <- 0
 test/no-shadow::: requiring @my/package-b (not a dep of this project)
-deeper -> 1
-shallower <- 0
-deeper -> 1
-shallower <- 0
-deeper -> 1
-shallower <- 0
 [VENDORED] @my/package-b::: running @my/package-b
-deeper -> 1
-shallower <- 0
 test/no-shadow::: requiring @my/package-a/foo (not a dep of this project)
-deeper -> 1
-shallower <- 0
-deeper -> 1
-shallower <- 0
 [VENDORED] @my/package-a::: running @my/package-a/foo with condition "cond"
 test/no-shadow::: requiring @my/package-b/foo (not a dep of this project)
-deeper -> 1
-shallower <- 0
-deeper -> 1
-shallower <- 0
 [VENDORED] @my/package-b::: running @my/package-b/foo
 test/no-shadow::: requiring @my/package-a/bar
-deeper -> 1
-shallower <- 0
-deeper -> 1
-shallower <- 0
 [VENDORED] @my/package-a::: running @my/package-a/bar with condition "cond"
-deeper -> 1
-shallower <- 0
-deeper -> 1
-shallower <- 0
 [VENDORED] @my/package-b::: running @my/package-b/bar
-deeper -> 1
-shallower <- 0
 [VENDORED] @my/package-b::: other a-bar cond
 [VENDORED] @my/package-a::: other b-bar
 test/no-shadow::: requiring @my/package-b/bar
-deeper -> 1
-shallower <- 0

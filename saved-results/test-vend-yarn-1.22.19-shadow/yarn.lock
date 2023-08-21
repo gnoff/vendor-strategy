@@ -2,63 +2,63 @@
 # yarn lockfile v1
 
 
-"@my/log@1.0.175":
-  version "1.0.175"
-  resolved "http://localhost:4873/@my/log/-/log-1.0.175.tgz#5e7bbc08d8b018f23deb293e7d93a1db818b6a93"
-  integrity sha512-HtqI43Im3Nu/o1vThBuO9m4OvKMXZZYjwEtOi4dzftWuKnVGpe+i+joE2Q+X6sf5+chGZbFmj4r2QUSqifNM3w==
+"@my/log@1.0.204":
+  version "1.0.204"
+  resolved "http://localhost:4873/@my/log/-/log-1.0.204.tgz#28777b462ee5eeda8d393d336679a80fd8393583"
+  integrity sha512-Uy8ziuTsmmh7jYkBHkLJC0vbZGiByLtW0aeDKZWkF+LJxI2ngYwPMCOrDMFIC0pzwOYPWvA7RhVtDvKY3cWErA==
 
-"@my/package-a@1.0.175":
-  version "1.0.175"
-  resolved "http://localhost:4873/@my/package-a/-/package-a-1.0.175.tgz#fece6c0bed7d0bbde0beae6115a1a36911744d1b"
-  integrity sha512-+l/DSGjseH3hXawaUZ/H6OEO2jEohAIVcs2b9aUCscarmA14Hq1xPtJRhumjQ63cJwjfj8qGat5iBRDF0RPuGw==
+"@my/package-a@1.0.204":
+  version "1.0.204"
+  resolved "http://localhost:4873/@my/package-a/-/package-a-1.0.204.tgz#3f67f28340eaf13772141cf685ea65e30372c4b6"
+  integrity sha512-eplECBF1RK5ikw6scqsmCpcrClWQB5BxS8U0Rw7Lj8yGafVDcJejhvoDjFxZt4ycx6JRgeuRuhcSLfNMzsZslA==
   dependencies:
-    "@my/log" "1.0.175"
+    "@my/log" "1.0.204"
     client-only "^0.0.1"
     server-only "^0.0.1"
 
-"@my/package-b@1.0.175":
-  version "1.0.175"
-  resolved "http://localhost:4873/@my/package-b/-/package-b-1.0.175.tgz#b20932af92f22f7dcc2f6e4fd1037d0ae499882c"
-  integrity sha512-WeN0+T0jHhr9amG7lv3lu46liepOWEdx5ZqD3Ca0AXN369Dyvv0lSumPheNX78Ajb8zgWlPeurbDalBIAkZC5A==
+"@my/package-b@1.0.204":
+  version "1.0.204"
+  resolved "http://localhost:4873/@my/package-b/-/package-b-1.0.204.tgz#bcb9d431e04c39baac1557eeb4a6493cc674eab9"
+  integrity sha512-nKUUhlFrLZHwKhbTBmR84xraJcw3U5/Rn4smmNQ9hM2JnfzQCWTi2ESXhjNROzsYVeJnNzQK9xvIFHa7Ax/fSg==
   dependencies:
-    "@my/log" "1.0.175"
+    "@my/log" "1.0.204"
     client-only "^0.0.1"
     server-only "^0.0.1"
 
-"@my/vend-exports@1.0.175":
-  version "1.0.175"
-  resolved "http://localhost:4873/@my/vend-exports/-/vend-exports-1.0.175.tgz#aa0fb2cd386291a6670f1a3c06da7b6d815b669e"
-  integrity sha512-ncJys1YB7yWI1Q+rzFKtD/3qAWaQX0UjZ4HdYF9XRDPqe6g4JfppKoJiHn7PV4SKFPGuSktLgEnMOCVtqGv/OQ==
+"@my/vend-exports@1.0.204":
+  version "1.0.204"
+  resolved "http://localhost:4873/@my/vend-exports/-/vend-exports-1.0.204.tgz#0ba515303e47f9a1a517d81c3e2c70e1382c5f02"
+  integrity sha512-UJnrDynYRvchO5LgbUymOUR9ir4pi629GFqLxkUH90xdoQkLiRTgzirxBGl9s4o6F3jTvi3rAgY6oEE+CasO6w==
   dependencies:
-    "@my/log" "1.0.175"
+    "@my/log" "1.0.204"
     client-only "^0.0.1"
     server-only "^0.0.1"
 
-"@my/vend-paths@1.0.175":
-  version "1.0.175"
-  resolved "http://localhost:4873/@my/vend-paths/-/vend-paths-1.0.175.tgz#ba93244985467986c6b24699e6b333de0125baf8"
-  integrity sha512-uDeFTgcEo/VnpaLdrHSaLC8Pv2ZGOHEbpJP3sH29y86ECxkUEnzdzpu5RzAsKLZ/UCIxWZ6I3b4q0hDbTFjZCA==
+"@my/vend-paths@1.0.204":
+  version "1.0.204"
+  resolved "http://localhost:4873/@my/vend-paths/-/vend-paths-1.0.204.tgz#94b984fc3a7c3b1e4682e661c025031ffb98345e"
+  integrity sha512-waE7CyKycLaOs+jxeFiHzGXx6OzzIs6VRVwKLELR4umU3VKVqzgaY4OMhWS6lJM0ewI6kXmVdgRXDUW6rGsDzQ==
   dependencies:
-    "@my/log" "1.0.175"
+    "@my/log" "1.0.204"
     client-only "^0.0.1"
     server-only "^0.0.1"
 
-"@my/vend@1.0.175":
-  version "1.0.175"
-  resolved "http://localhost:4873/@my/vend/-/vend-1.0.175.tgz#c3b776d13d89e5b24d4fe546e28f32d2a56de301"
-  integrity sha512-Z1ZUAi6rNBUpCHxpJqQxu2Y2dVHq2sakHOntxf1yTKWYhDVTgUg4ktsM++n/As51Vb6E7uSmMqEIL/90GO9pwA==
+"@my/vend@1.0.204":
+  version "1.0.204"
+  resolved "http://localhost:4873/@my/vend/-/vend-1.0.204.tgz#1df16aaa0ae11775ed4d51e60459c91b5941d04a"
+  integrity sha512-SxiDtux8fJ//U1Ml8VriN1BstnPmYcOjlJDvU8nJCfl1ggg2rpQdJL3tXXqZ44DTRzNOgL0wXc0/7Qn4WCgAZA==
   dependencies:
-    "@my/log" "1.0.175"
-    "@my/vend-exports" "1.0.175"
-    "@my/vend-paths" "1.0.175"
+    "@my/log" "1.0.204"
+    "@my/vend-exports" "1.0.204"
+    "@my/vend-paths" "1.0.204"
 
 "@strategy/vend@latest":
-  version "1.0.175"
-  resolved "http://localhost:4873/@strategy/vend/-/vend-1.0.175.tgz#ba88c019e6f0c05128048ef27d05e0f64307a29a"
-  integrity sha512-2tM6s9Ewrs6r43A49gd9BwIsU7cRF/a33QdshMS8RMjIt8c/FEY+n9fOyY47EkeJRP6vIqn4E09Opz04PxgjJA==
+  version "1.0.204"
+  resolved "http://localhost:4873/@strategy/vend/-/vend-1.0.204.tgz#cb625c25e2ae41eb726b18f3981596c0aa91212a"
+  integrity sha512-yiGCsa5GkvNIBXkIEtB+uU1pUDzRWBn2XDXkQbuLnbnxvtGHsLHA0BzWKOnqEZ4KCMVlUHRI4dZ3Py2fJXMezw==
   dependencies:
-    "@my/log" "1.0.175"
-    "@my/vend" "1.0.175"
+    "@my/log" "1.0.204"
+    "@my/vend" "1.0.204"
 
 client-only@^0.0.1:
   version "0.0.1"

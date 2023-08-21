@@ -1,0 +1,31 @@
+> node index.js
+@strategy/vendor-deps-bundled::: running index.js
+@strategy/vendor-deps-bundled::: requiring @my/vendor-deps-bundled
+@my/vendor-deps-bundled::: running index.js
+@my/vendor-deps-bundled::: about to install require-hook
+@my/vendor-deps-bundled::: running exports/@my/package-a
+@my/vendor-deps-bundled::: module.exports {
+  '.': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-bundled-pnpm-8.6.12-transitive/node_modules/.pnpm/@my+vendor-deps-bundled@1.0.204/node_modules/@my/vendor-deps-bundled/vendored/@my/package-a/index.js',
+  './foo': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-bundled-pnpm-8.6.12-transitive/node_modules/.pnpm/@my+vendor-deps-bundled@1.0.204/node_modules/@my/vendor-deps-bundled/vendored/@my/package-a/foo.js',
+  './bar': '/Users/joshstory/projects/vendor-strategy/results/test-vendor-deps-bundled-pnpm-8.6.12-transitive/node_modules/.pnpm/@my+vendor-deps-bundled@1.0.204/node_modules/@my/vendor-deps-bundled/vendored/@my/package-a/bar.js'
+}
+@my/vendor-deps-bundled::: installing require hook for vendored packages
+test/transitive::: running index.js
+test/transitive::: acquiring package-a transitive getter
+@my/package-trans-a::: running @my/package-trans-a
+test/transitive::: acquiring package-b transitive getter
+@my/package-trans-b::: running @my/package-trans-b
+test/transitive::: requiring @my/package-a
+[VENDORED] @my/package-a::: running @my/package-a
+test/transitive::: requiring @my/package-b
+[VENDORED] @my/package-b::: running @my/package-b
+test/transitive::: requiring @my/package-a/foo
+[VENDORED] @my/package-a::: running @my/package-a/foo
+test/transitive::: requiring @my/package-b/foo
+[VENDORED] @my/package-b::: running @my/package-b/foo
+test/transitive::: requiring @my/package-a/bar
+[VENDORED] @my/package-a::: running @my/package-a/bar
+[VENDORED] @my/package-b::: running @my/package-b/bar
+[VENDORED] @my/package-b::: other a-bar
+[VENDORED] @my/package-a::: other b-bar
+test/transitive::: requiring @my/package-b/bar

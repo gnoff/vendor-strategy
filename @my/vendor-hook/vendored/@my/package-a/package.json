@@ -1,6 +1,6 @@
 {
   "name": "my-package-a-vendored",
-  "version": "1.0.175",
+  "version": "1.0.204",
   "description": "",
   "main": "index.js",
   "files": [
@@ -39,7 +39,7 @@
     "registry": "http://localhost:4873"
   },
   "dependencies": {
-    "@my/log": "1.0.175",
+    "@my/log": "1.0.204",
     "client-only": "^0.0.1",
     "server-only": "^0.0.1"
   }

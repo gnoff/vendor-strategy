@@ -1,6 +1,6 @@
 {
   "name": "@my/vend",
-  "version": "1.0.175",
+  "version": "1.0.204",
   "description": "",
   "main": "index.js",
   "files": [
@@ -19,8 +19,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@my/vend-exports": "1.0.175",
-    "@my/vend-paths": "1.0.175",
-    "@my/log": "1.0.175"
+    "@my/vend-exports": "1.0.204",
+    "@my/vend-paths": "1.0.204",
+    "@my/log": "1.0.204"
   }
 }
